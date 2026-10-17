@@ -1,0 +1,16 @@
+# Python build/runtime files
+**/__pycache__/
+*.py[cod]
+
+# Generated site packages; source and release snapshots are tracked instead.
+site/*.tar.gz
+
+# Local server secrets and machine-specific configuration
+site/private/
+*.key
+.env
+.env.*
+
+# OS/editor files
+.DS_Store
+Thumbs.db

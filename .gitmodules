@@ -1,0 +1,6 @@
+[submodule "upstream/Relapse-Exploit"]
+	path = upstream/Relapse-Exploit
+	url = https://github.com/ntfargo/Relapse-Exploit.git
+[submodule "upstream/Byepervisor-Reborn"]
+	path = upstream/Byepervisor-Reborn
+	url = https://github.com/PS5Dev/Byepervisor-Reborn.git

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TransformStream single-case regression</title>
+  <link rel="stylesheet" href="ui.css">
+  <script src="transformstream-regression.js" defer></script>
+</head>
+<body class="console-page">
+  <main>
+    <header class="topbar"><div class="identity">PS5 / Research</div><nav class="utilities"><a href="./">Test library</a><a href="dashboard">Dashboard</a></nav></header>
+    <section class="selected-suite">
+      <p class="section-label">MANUAL WEBKIT REGRESSION</p>
+      <h1>TransformStream single-case check</h1>
+      <p>This runs one reduced case from WebKit's published CVE-2026-43705 regression: one TransformStream construction while the frame's array iterator substitutes a plain object.</p>
+      <p class="scope-note"><strong>Browser stability:</strong> affected code may terminate the browser process. This runs one constructor call and one iterator override in an isolated frame, with no repeat or user-sized allocation. The page never starts automatically and never retries.</p>
+      <p>The five-second deadline is soft; JavaScript cannot stop a hung renderer. A timeout means no frame result arrived, and does not prove the case executed or crashed. If the browser or console hangs or restarts, do not run it again. No code execution, arbitrary memory access, or kernel access is attempted.</p>
+      <p>Expected safe handling in the fixed upstream implementation is a TypeError. That result would not prove which implementation the PS5 firmware contains.</p>
+    </section>
+    <section class="settings-panel" aria-label="Run provenance">
+      <h2>Run provenance</h2>
+      <label>Device type
+        <select id="origin"><option value="desktop_simulation">Desktop browser</option><option value="ps5_hardware_reported">Physical PS5 (operator reported)</option></select>
+      </label>
+      <label>Firmware, if known <input id="firmware" maxlength="80" placeholder="Optional"></label>
+      <label>Model, if known <input id="model" maxlength="80" placeholder="Optional"></label>
+      <p>Browser and source hashes are attached automatically. Device and firmware labels are self-reported.</p>
+    </section>
+    <section class="session-panel" aria-label="Regression result">
+      <p id="state" role="status" aria-live="polite">Checking collector…</p>
+      <button id="start" type="button" disabled>Run one case</button>
+      <button id="download" class="secondary-button" type="button" disabled>Download raw result</button>
+      <pre id="result" aria-live="polite"></pre>
+      <iframe id="case-frame" title="Isolated regression case" hidden sandbox="allow-scripts allow-same-origin"></iframe>
+    </section>
+  </main>
+</body>
+</html>

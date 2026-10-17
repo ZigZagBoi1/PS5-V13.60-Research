@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebKit datalist lifetime check</title>
+  <link rel="stylesheet" href="ui.css">
+  <script src="datalist-uaf-probe.js" defer></script>
+</head>
+<body class="console-page">
+  <main>
+    <header class="topbar"><div class="identity">PS5 / Research</div><nav class="utilities"><a href="./">Test library</a><a href="dashboard">Dashboard</a></nav></header>
+    <section class="selected-suite">
+      <p class="section-label">ONE MANUAL WEBKIT LIFETIME CHECK</p>
+      <h1>Datalist control check</h1>
+      <p>This checks one source-backed WebCore lifetime path: a page click listener changes an input from text to button while the browser’s own datalist control is dispatching a click. Sony’s published WebKit source has the pre-fix raw-owner pattern; its correspondence to PS5 14.10 is unverified.</p>
+      <p class="scope-note"><strong>Possible browser impact:</strong> the browser may close or freeze if the suspected lifetime defect is present. The page makes no synthetic click, forced collection, heap churn, or repeated attempt. If the browser closes, freezes, or the console restarts, do not run it again.</p>
+      <p>A normal return, an exception, an absent control, or missing telemetry does not confirm or refute a use-after-free. This test does not seek code execution, arbitrary memory access, kernel access, or a jailbreak.</p>
+    </section>
+    <section class="settings-panel" aria-label="Run provenance">
+      <h2>Run provenance</h2>
+      <label>Device type
+        <select id="origin"><option value="desktop_simulation">Desktop browser</option><option value="ps5_hardware_reported">Physical PS5 (operator reported)</option></select>
+      </label>
+      <label>Firmware, if known <input id="firmware" maxlength="80" placeholder="Optional"></label>
+      <label>Model, if known <input id="model" maxlength="80" placeholder="Optional"></label>
+      <p>Browser and source hashes are attached automatically. Device and firmware labels are self-reported.</p>
+    </section>
+    <section class="session-panel" aria-label="One-shot test">
+      <h2>Manual control</h2>
+      <p>First check whether the browser visibly shows its own datalist arrow/control for this input. Do not select an option. The page cannot inspect a closed browser shadow tree, so visibility is your observation.</p>
+      <label for="choices-input">Research choice</label>
+      <input id="choices-input" type="text" list="choices" autocomplete="off" value="" aria-describedby="control-help">
+      <datalist id="choices"><option value="Alpha"></option><option value="Beta"></option></datalist>
+      <p id="control-help">If the browser’s own dropdown control is visible, start the run and confirm that you can see it. The armed test accepts one trusted mouse click in the rightmost 44 CSS pixels of this input. A click elsewhere is recorded without changing the input.</p>
+      <p id="state" role="status" aria-live="polite">Checking collector…</p>
+      <button id="start" type="button" disabled>Start one-shot run</button>
+      <button id="visible" type="button" disabled hidden>I see the browser control</button>
+      <button id="not-visible" class="secondary-button" type="button" disabled hidden>The control is not visible</button>
+      <button id="download" class="secondary-button" type="button" disabled>Download raw observations</button>
+      <pre id="result" aria-live="polite"></pre>
+      <p id="run-id" class="run-id"></p>
+    </section>
+  </main>
+</body>
+</html>

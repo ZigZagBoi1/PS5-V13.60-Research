@@ -1,0 +1,89 @@
+:root {
+  color-scheme: dark;
+  background: #080b11;
+  color: #f5f6fa;
+  font: clamp(16px, 1vw + 4px, 21px)/1.5 Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at 80% 12%, #202c40, #080b11 67%);
+}
+
+main {
+  width: min(72rem, calc(100% - clamp(2rem, 6vw, 6rem)));
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vh, 2.5rem) 0 clamp(1.5rem, 5vh, 3rem);
+}
+
+.back { display: inline-block; margin-bottom: 1rem; color: #dce8ff; text-underline-offset: 4px; }
+.eyebrow { margin: 0 0 .5rem; color: #b9cbe7; font-size: .8rem; letter-spacing: .12em; }
+h1 { margin: 0 0 .5rem; font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 500; line-height: 1.1; }
+.lead { max-width: 58rem; margin: .5rem 0 1rem; color: #d3dced; font-size: clamp(1.05rem, 1.6vw, 1.35rem); }
+
+.notice {
+  margin: 1rem 0;
+  padding: .8rem 1rem;
+  border: 1px solid #b7c8e552;
+  border-radius: .75rem;
+  background: #18243a;
+  color: #e3ebfa;
+}
+.notice.ready { border-color: #a5d6c2; background: #1b3833; }
+.notice.error { border-color: #e9a996; background: #442824; }
+
+button {
+  min-height: 3.25rem;
+  padding: .7rem 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: #edf3ff;
+  color: #121a29;
+  font: 600 1rem Arial, Helvetica, sans-serif;
+}
+button:disabled { opacity: .55; }
+button:not(:disabled) { cursor: pointer; }
+button:not(:disabled):hover { background: #d6e4ff; }
+button:focus, a:focus { outline: 3px solid #fff; outline-offset: 4px; }
+
+.console-panel {
+  margin: 1.25rem 0 .75rem;
+  padding: clamp(.8rem, 2vw, 1.25rem);
+  border: 1px solid #bfcfe333;
+  border-radius: .9rem;
+  background: #101720;
+}
+.console-panel h2 { margin: 0 0 .65rem; font-size: 1rem; font-weight: 500; }
+pre {
+  min-height: 9rem;
+  max-height: min(42vh, 25rem);
+  overflow: auto;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #cfdbed;
+  font: clamp(.78rem, .9vw, .92rem)/1.5 ui-monospace, Consolas, monospace;
+}
+.diagnostics-status, .note, footer { font-size: .82rem; }
+.diagnostics-status { margin: .5rem 0; color: #a5d6c2; }
+.diagnostics-status.error { color: #ffb4a3; }
+.note { color: #c5d2e5; }
+footer { margin-top: 1.5rem; color: #b8c5d9; }
+footer a { color: #dce8ff; }
+
+@media (max-width: 700px) {
+  main { width: calc(100% - 2rem); padding-top: 1rem; }
+  button { width: 100%; min-height: 3.25rem; }
+  pre { max-height: 44vh; font-size: .78rem; }
+}
+
+@media (max-height: 650px) {
+  main { padding-top: .75rem; }
+  .back { margin-bottom: .5rem; }
+  .console-panel { margin-top: .75rem; }
+  pre { min-height: 6rem; max-height: 34vh; }
+}

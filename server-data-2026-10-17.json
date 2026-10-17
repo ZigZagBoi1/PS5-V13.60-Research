@@ -1,0 +1,3052 @@
+{
+  "source": "/var/lib/ps5-research/runs",
+  "runs": [
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:18.418599+00:00",
+        "expected_test_ids": [
+          "environment",
+          "api_presence",
+          "typedarray_dataview",
+          "bounded_allocation",
+          "exceptions",
+          "bigint",
+          "structured_clone",
+          "wasm_presence",
+          "network_health",
+          "timing"
+        ],
+        "experiment": "browser-baseline",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "allocation_bytes": 1048576,
+          "timing_samples": 5
+        },
+        "random_seed": 3177057512,
+        "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+        "suite": "baseline",
+        "suite_revision": "baseline-002",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:07.747Z",
+          "details": {
+            "parameters": {
+              "allocation_bytes": 1048576,
+              "timing_samples": 5
+            },
+            "random_seed": 3177057512,
+            "suite": "baseline"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:18.663812+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "5ba665bb010ea8d1ecf0a0b523845d2e253b78e4f4f5b237cbf91b38925516cc"
+        },
+        {
+          "client_time": "2026-10-17T14:22:07.861Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:18.729094+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "11bc5546153ab7f1e4a5a38364dc295d8ab9af4d2e3aea53a0afeca1b02353e5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:07.872Z",
+          "details": {
+            "id": "environment"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:18.738916+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "ec7bd9358681212ffdc38dd2b4386471320e4d0d4b13c74d994310443216f31c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:07.926Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:18.794084+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "7f356d3fcb5b8fe3d6ea8e9b210dfe9919fa1c203e6d3f3dd9ceedd9cf8e37b6"
+        },
+        {
+          "client_time": "2026-10-17T14:22:07.937Z",
+          "details": {
+            "elapsed_ms": 0,
+            "expected": "Strings are recorded as unverified browser claims",
+            "hypothesis": "Browser exposes its identification strings",
+            "id": "environment",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "firmware_detection": "Not available through a trusted standard browser API",
+              "language": "en-US",
+              "platform": "PlayStation 5",
+              "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:18.804013+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "1510c076a62901f8229116c07222cca0c5d98e0a4c0abdfa6316de9f5f0c5d06"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.054Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:18.921754+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "5e642c85e986a7b0faac9338bf92228e82b32787dc67a6ba76d4876b2170ec0e"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.111Z",
+          "details": {
+            "id": "api_presence"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:18.978545+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "075cb892381ecea134990c9ff7f9ec27556023bf366d922267c8dd5aa6d42a2c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.165Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.054578+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "9f7df0cb6da471cd59f7653cbe1c06699c4310cc337828a482600aa145913084"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.224Z",
+          "details": {
+            "elapsed_ms": 2,
+            "expected": "Boolean feature matrix",
+            "hypothesis": "Standard APIs can be enumerated without using privileges",
+            "id": "api_presence",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "BigInt": true,
+              "Promise": true,
+              "SharedArrayBuffer": false,
+              "TextEncoder": true,
+              "WebAssembly": false,
+              "Worker": true,
+              "XMLHttpRequest": true,
+              "fetch": true,
+              "performance": true,
+              "structuredClone": true
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:19.091731+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 9,
+          "sha256": "b3d799c9f08ed9d0fc8c2c13b3df887a6d8724b96c6b598e691b54cf4356fca5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.344Z",
+          "details": {
+            "ack_seq": 9
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.218943+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 10,
+          "sha256": "8d4d21211342134335625d8d95aa081e1b4d0906e6a5c5669087d5a6eecaf2de"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.400Z",
+          "details": {
+            "id": "typedarray_dataview"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:19.267313+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 11,
+          "sha256": "07e0bb82b15f749299d0069f033fdcd54c99f19ddd92e61cdccdd6e3804dfb69"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.456Z",
+          "details": {
+            "ack_seq": 11
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.323706+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 12,
+          "sha256": "e18c4dd494c65cc239c56c22f5beb7aeb1b843e28f07cf069fff688fafcd8748"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.513Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "0x12345678 and matching bytes",
+            "hypothesis": "A normal buffer round-trip preserves bytes",
+            "id": "typedarray_dataview",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "bytes": 16,
+              "first_byte": 120,
+              "value": 305419896
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:19.380552+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 13,
+          "sha256": "66e7ecca3ceed6ec18352eb1b4d331b81cb8265f89762621d120d66c559761f3"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.636Z",
+          "details": {
+            "ack_seq": 13
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.502797+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 14,
+          "sha256": "f6a06de20bb0e4f67855b650d831e6c1007f5515fef15dbdf76f6226eda771bf"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.692Z",
+          "details": {
+            "id": "bounded_allocation"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:19.558745+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 15,
+          "sha256": "fb7aad04bd39da556d5157ecf7fba9e55c65de20ed55e3bb6a132ed5065f8855"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.748Z",
+          "details": {
+            "ack_seq": 15
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.615320+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 16,
+          "sha256": "f4c114b065f553be87ff4ff5cf2fcbc6ddd4d4455e4e18bf223cd7424ac9b1d1"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.805Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "First and last bytes round-trip; fixed cap 1 MiB",
+            "hypothesis": "A 1 MiB ArrayBuffer supports normal writes",
+            "id": "bounded_allocation",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "allocation_bytes": 1048576,
+              "checksum": 46
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:19.672703+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 17,
+          "sha256": "e8dcd498034f1c552517cf7c52f063385a331e3014866cb2f160d172ea012206"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.932Z",
+          "details": {
+            "ack_seq": 17
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.799827+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 18,
+          "sha256": "b0e91e10a84900e6dde0abe88b3ff76a513de6e5111ccf41d315c29e61d6d640"
+        },
+        {
+          "client_time": "2026-10-17T14:22:08.988Z",
+          "details": {
+            "id": "exceptions"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:19.855420+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 19,
+          "sha256": "c32f75eaf1d00bc0a09f9c97e4cbac228c445b6e1679b4446776097911454ee1"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.044Z",
+          "details": {
+            "ack_seq": 19
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:19.911145+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 20,
+          "sha256": "ca579c3d0eacd03f12a52c23fdeb20fa8844913fb1d2d8a56cfe6dbd333f81df"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.100Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Known exception message caught",
+            "hypothesis": "An explicit JavaScript exception can be caught",
+            "id": "exceptions",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "caught": true
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:19.969802+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 21,
+          "sha256": "5840288ba9e467e71dcb39997827fcb98b607d5a2ea93aaff4703627610be22a"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.230Z",
+          "details": {
+            "ack_seq": 21
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.097163+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 22,
+          "sha256": "e3e03112c76f5359f4db9402a4d0e043537964c7d5c3a3de0b0cd6ea6cc45b93"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.286Z",
+          "details": {
+            "id": "bigint"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:20.153017+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 23,
+          "sha256": "1e09df3034242a4337f928632f8d6c865d6d371dd1d3b3324176290a6d9c445e"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.340Z",
+          "details": {
+            "ack_seq": 23
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.207494+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 24,
+          "sha256": "9d865e67f82dd70b7b406fcadd2c2b638a50a3bd38ff40d5d84724d418514ad0"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.396Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "9007199254740994",
+            "hypothesis": "Standard BigInt addition is exact",
+            "id": "bigint",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "value": "9007199254740994"
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:20.264716+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 25,
+          "sha256": "8910783ed0e60169f206981468c5bec108462b8060217817c7f6b89d59ccbfcb"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.530Z",
+          "details": {
+            "ack_seq": 25
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.398104+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 26,
+          "sha256": "5353065263ec079d47441f5a82964c806dbb535cf3fc672326bd4229dd014bd5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.588Z",
+          "details": {
+            "id": "structured_clone"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:20.454716+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 27,
+          "sha256": "a0e831c3c78747e131774e8c6a2e7767b70e7c0c9e8bb1c0a064c33ff928fae0"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.644Z",
+          "details": {
+            "ack_seq": 27
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.511491+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 28,
+          "sha256": "e54c954b778dd71a8e672e6d98f2d3ffd6faa9b21962bf87678f39789e9fbd8e"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.701Z",
+          "details": {
+            "elapsed_ms": 2,
+            "expected": "Copied byte remains 23 after original changes",
+            "hypothesis": "A cloned typed array is independent",
+            "id": "structured_clone",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "copied_byte": 23
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:20.568384+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 29,
+          "sha256": "631019cc86268ca93524d003be9cb1a443a69ea7da5ebf458d45da4fa1c2f9e7"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.838Z",
+          "details": {
+            "ack_seq": 29
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.705674+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 30,
+          "sha256": "2cb31b555424d6dcc3b28a9fa177939148874ea4eb545604e98febcaa77986bd"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.894Z",
+          "details": {
+            "state": "running"
+          },
+          "event": "heartbeat",
+          "received_at_utc": "2026-10-17T13:25:20.761134+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 31,
+          "sha256": "6127c3262db2060f2706cce7512c95f3ec6bfed856c986976c2c70bab4fb4c15"
+        },
+        {
+          "client_time": "2026-10-17T14:22:09.949Z",
+          "details": {
+            "id": "wasm_presence"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:20.816933+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 32,
+          "sha256": "f7c2c56996c2b89949a582d0cbdc10d361e9c25486094b282fb9a4d0290ad4a8"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.005Z",
+          "details": {
+            "ack_seq": 32
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:20.872226+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 33,
+          "sha256": "d9b629db77af55be3c90ef47e25453effcc3896e5c42ab4912d20e804fe10502"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.015Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Availability only; no native privilege claim",
+            "hypothesis": "The WebAssembly API reports availability",
+            "id": "wasm_presence",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": "WebAssembly unavailable",
+            "status": "UNSUPPORTED",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:20.881458+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 34,
+          "sha256": "64bdc09d001214ec63ecb5ddcb4c389ef1f6a2a81b8b5e7bc68ffe0fee260d61"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.156Z",
+          "details": {
+            "ack_seq": 34
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.025162+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 35,
+          "sha256": "2417aa3c72dd742ad75b58a63617a36a657595378a77f9c949e0b09f0f05fef9"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.212Z",
+          "details": {
+            "id": "network_health"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:21.079286+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 36,
+          "sha256": "bc098cddcadbdb096b74e88918bfa47795c506de7e6e8ea14ec39bea687aec71"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.268Z",
+          "details": {
+            "ack_seq": 36
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.135008+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 37,
+          "sha256": "d0acf00eafe18547f11523be0f334cc36fcbc9741289484908e3cad2fb59a67d"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.333Z",
+          "details": {
+            "elapsed_ms": 11,
+            "expected": "Collector reports ok:true with source hash",
+            "hypothesis": "A same-origin HTTP health request is acknowledged",
+            "id": "network_health",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "ok": true,
+              "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:21.203914+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 38,
+          "sha256": "d6845a28811a38b051026219538b2284d791114c2851f2432826a68bc794ceab"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.478Z",
+          "details": {
+            "ack_seq": 38
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.348277+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 39,
+          "sha256": "0e370a23f62de53f5c8c396555d4def11ed1720445597bc08091654c212f6735"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.535Z",
+          "details": {
+            "id": "timing"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:21.401760+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 40,
+          "sha256": "9b8fbceb474f013a1c478d4cdaf14b76ca96a93f4151c57f1466cd75185b6119"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.588Z",
+          "details": {
+            "ack_seq": 40
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.466841+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 41,
+          "sha256": "56c262bebd379622d0f07559a454e85ce494b7881709a4b317119af93312b068"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.710Z",
+          "details": {
+            "elapsed_ms": 102,
+            "expected": "Five deltas; actual timing is measured rather than prescribed",
+            "hypothesis": "Five bounded timers return observable nonnegative deltas",
+            "id": "timing",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "requested_delay_ms": 20,
+              "samples_ms": [
+                21,
+                20,
+                20,
+                20.000000000003638,
+                19.999999999996362
+              ]
+            },
+            "status": "PASS",
+            "suite_revision": "baseline-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:21.578445+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 42,
+          "sha256": "2fe2b3bef344e664004a086a5884feec6ed5acc4db80ea3434a852a7af91222c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.799Z",
+          "details": {
+            "ack_seq": 42
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.666529+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 43,
+          "sha256": "1a69ceb5d0c3c0085ba69ed2bde0466961da20534471f248d77528676f4110c2"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.869Z",
+          "details": {
+            "note": "Browser suite returned; review individual results"
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:25:21.736267+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 44,
+          "sha256": "32a356f48211a893a586775587eb439029bc7ae106a8e69685d86d489ce61fec"
+        },
+        {
+          "client_time": "2026-10-17T14:22:10.939Z",
+          "details": {
+            "ack_seq": 44
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:21.805900+00:00",
+          "run_id": "ad63e087-a195-4183-a6f9-9aefbd87d708",
+          "schema_version": 1,
+          "seq": 45,
+          "sha256": "e167da56d98717f6dd8bb6b8bd6d51240be9f6cc64a5e21c63726f1fb6aae6fc"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:27.372931+00:00",
+        "expected_test_ids": [
+          "js_compatibility",
+          "buffer_views",
+          "wasm_diagnostics",
+          "microtask_order",
+          "error_propagation",
+          "clock_precision",
+          "http_repeats",
+          "webkit_api_matrix"
+        ],
+        "experiment": "browser-phase2",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "buffer_bytes": 32,
+          "clock_reads": 128,
+          "health_requests": 3,
+          "http_repeats_timeout_ms": 18000,
+          "request_timeout_ms": 5000,
+          "test_timeout_ms": 3000,
+          "timer_samples": 5,
+          "wasm_module_bytes": 8
+        },
+        "random_seed": 2999418280,
+        "run_id": "4941599f-c230-445b-992d-d99f14310430",
+        "suite": "phase2",
+        "suite_revision": "phase2-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:16.625Z",
+          "details": {
+            "parameters": {
+              "buffer_bytes": 32,
+              "clock_reads": 128,
+              "health_requests": 3,
+              "http_repeats_timeout_ms": 18000,
+              "request_timeout_ms": 5000,
+              "test_timeout_ms": 3000,
+              "timer_samples": 5,
+              "wasm_module_bytes": 8
+            },
+            "random_seed": 2999418280,
+            "suite": "phase2"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:27.492429+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "8271841da385711270ed774eaafe48bcc46fd176430ce2ad388fc0e598cdd0aa"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.739Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:27.606226+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "f694fdf77150cf703ecdfd9e2bd00fd23b9ab733cbb1b404861a95add9d33965"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.748Z",
+          "details": {
+            "id": "js_compatibility"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:27.615044+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "5922bccead211463be8db914ad0e3d29906dada148b7737906104c67716ff737"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.800Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:27.667455+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "d7f051d750a9db8c3fc74abc913886425039beb3ba8ba95df1ce8ced6f2825be"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.812Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Descriptor, bind and JSON round-trip; optional methods measured",
+            "hypothesis": "Standard language library operations preserve their documented values",
+            "id": "js_compatibility",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "descriptor_json_bind": true,
+              "features": {
+                "array_find": true,
+                "array_includes": true,
+                "map": true,
+                "number_isSafeInteger": true,
+                "object_assign": true,
+                "set": true,
+                "symbol": true
+              },
+              "syntax_probe": "ES5-compatible source; newer syntax not measured"
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:27.678857+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "914f7988f1d581e67ce379a5c22d4ba9d5799902db15bfce983068b6ae21ed3e"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.931Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:27.798285+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "da61dc0fef2c3762c4b7b62c6b653bb934b3fd138da5e42220f5ccb1e564a1e1"
+        },
+        {
+          "client_time": "2026-10-17T14:22:16.984Z",
+          "details": {
+            "id": "buffer_views"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:27.852692+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "af37afd3d3d5608860a1f987ecfae108d672c984b1a03c027f1554f9d67ac4c5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.039Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:27.909246+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "9fcb3430d8d3766856da27aaebd05ef65e6c0bdb8493b86eded2b2c96cc003de"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.093Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Aliased byte 9, copied byte 2; invalid DataView read throws RangeError",
+            "hypothesis": "Valid aliases, copies and endian reads have ordinary semantics",
+            "id": "buffer_views",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "aliased_byte": 9,
+              "bytes": 32,
+              "copied_byte": 2,
+              "range_error": true
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:27.964770+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 9,
+          "sha256": "79b0a08c07a7cb5e8dbd6286ee9b9845e1e39a6db96920e5e2fff3d4f3c4919b"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.215Z",
+          "details": {
+            "ack_seq": 9
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.084643+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 10,
+          "sha256": "b93fc20f82df29b4683f98bfefcc59aa762c4d8c7e1c9fb3fa9838751ce74a40"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.269Z",
+          "details": {
+            "id": "wasm_diagnostics"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:28.136080+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 11,
+          "sha256": "90b6a4018c1deee26154d13fd83d0a4a43b8c490ef93b4e11a56f6a7d1a7f415"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.324Z",
+          "details": {
+            "ack_seq": 11
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.192996+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 12,
+          "sha256": "c941f06162e32acf2b50fa356b27db384696e36779332cebadf8d5587f6812f6"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.377Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "API shape plus validation and instantiation of an 8-byte empty module",
+            "hypothesis": "Property inspection separates absence from compilation failure",
+            "id": "wasm_diagnostics",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "classification": "API not exposed in this page context; cause unknown",
+              "descriptor": null,
+              "execution_tested": false,
+              "identifier_type": "undefined",
+              "null_value": false,
+              "own_property": false,
+              "property_present": false,
+              "property_type": "undefined",
+              "secure_context": true
+            },
+            "status": "UNSUPPORTED",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:28.247284+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 13,
+          "sha256": "5fb0fb764a6292462d5d7bfe47f579fe3f67c7ea649f7af187ac9398fcaa7b3c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.501Z",
+          "details": {
+            "ack_seq": 13
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.369876+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 14,
+          "sha256": "a5c25dd3a41314ee9e42b08976a0d45949b7bcb7020d8bc82517676af9bc8c26"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.555Z",
+          "details": {
+            "id": "microtask_order"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:28.423551+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 15,
+          "sha256": "4c193e3898eb2a833fbaed2b91a143c16b5f582465a2c446203d8cfe8d6b06b5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.610Z",
+          "details": {
+            "ack_seq": 15
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.478435+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 16,
+          "sha256": "3fbb0b8a51d2a0014bc6ae78e1752197eb489c5dcd9ac3155feec5f634e79da3"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.665Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "sync, promise, nested, timer",
+            "hypothesis": "Promise reactions complete before the next timer task",
+            "id": "microtask_order",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "order": [
+                "sync",
+                "promise",
+                "nested",
+                "timer"
+              ],
+              "queueMicrotask": true
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:28.545835+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 17,
+          "sha256": "af42481f19b1c7e9a6379341ebe95f8326aa91b1401f31505ad3e0cf88fc4a14"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.792Z",
+          "details": {
+            "ack_seq": 17
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.659609+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 18,
+          "sha256": "bbbb3a696551145f4295828d23a2a4dce18357757efa527a788d45a5a76bb9ac"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.847Z",
+          "details": {
+            "id": "error_propagation"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:28.714709+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 19,
+          "sha256": "8cded021395a69f53e9b167382345de5609edb76079305bfda90d782b113b66a"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.901Z",
+          "details": {
+            "ack_seq": 19
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.778200+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 20,
+          "sha256": "10fe709a6b90c1c698b653d9cfbdf8c7c8e4b4a41a7ed0ed6f3ff5796f08e73d"
+        },
+        {
+          "client_time": "2026-10-17T14:22:17.955Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "TypeError reaches catch once, chain recovers to 11",
+            "hypothesis": "A handled Promise rejection preserves error identity",
+            "id": "error_propagation",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "catches": 1,
+              "message": "phase2-controlled-error",
+              "name": "TypeError",
+              "recovered": 11
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:28.822454+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 21,
+          "sha256": "a1a178789571ad63fc896ae86b8741c0eeeb1403b0d58ef985655d751662e9f8"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.087Z",
+          "details": {
+            "ack_seq": 21
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:28.954775+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 22,
+          "sha256": "31b7da95916659220ca46fdfbfddb79051cd2ca813899c2f4678cf22ebd88950"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.142Z",
+          "details": {
+            "id": "clock_precision"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:29.009674+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 23,
+          "sha256": "c9f539927198fa6686199e3f3e8caf47d6652f624d090fbf1465c33d108e82ab"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.196Z",
+          "details": {
+            "ack_seq": 23
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.062995+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 24,
+          "sha256": "523bdd99665ad402611f277f07553c45aa1ac802575eb65dfd4e25f9c90d2ece"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.251Z",
+          "details": {
+            "elapsed_ms": 0,
+            "expected": "128 clock reads and five zero-delay timer samples",
+            "hypothesis": "Bounded samples record clock increments without assuming precision",
+            "id": "clock_precision",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "backward_steps": 0,
+              "clock": "performance.now",
+              "limitation": "Observed resolution only; scheduling and page context affect samples",
+              "min_positive_step_ms": null,
+              "positive_steps": 0,
+              "reads": 128,
+              "requested_delay_ms": 0,
+              "timer_samples_ms": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:29.118440+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 25,
+          "sha256": "2207ff9aa7680698c2bac2edb6214d332c3aeae6af63f10de94a162a892e5bac"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.386Z",
+          "details": {
+            "ack_seq": 25
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.254456+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 26,
+          "sha256": "14f86f29e2305113c3c04b78885911e0d371e67ace57510a630e62ce0fdc0508"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.441Z",
+          "details": {
+            "id": "http_repeats"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:29.308109+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 27,
+          "sha256": "83a6bb5c0736ae0f0a1d996959a1d64d59e4d6c9c07d980e090c6aeffff332ad"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.495Z",
+          "details": {
+            "ack_seq": 27
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.363525+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 28,
+          "sha256": "778aefe2aa10b0320371cd07cdb42885758bfd287e707e543eb046ff1a1e5850"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.566Z",
+          "details": {
+            "elapsed_ms": 18,
+            "expected": "Three ok responses with the current run source hash",
+            "hypothesis": "Three sequential same-origin requests identify stable server provenance",
+            "id": "http_repeats",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "requests": 3,
+              "samples": [
+                {
+                  "elapsed_ms": 9,
+                  "server_utc": "2026-10-17T13:25:29.413213+00:00",
+                  "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+                },
+                {
+                  "elapsed_ms": 5,
+                  "server_utc": "2026-10-17T13:25:29.418365+00:00",
+                  "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+                },
+                {
+                  "elapsed_ms": 4.0000000000009095,
+                  "server_utc": "2026-10-17T13:25:29.423887+00:00",
+                  "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+                }
+              ],
+              "scope": "Health reads plus separate acknowledged test checkpoints; no packet loss rate inferred",
+              "transport": "XMLHttpRequest"
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 18000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:29.433887+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 29,
+          "sha256": "c471ba380daa003c43c1d9371c01a9845373553ab2b2c101df75a903109aa75c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.704Z",
+          "details": {
+            "ack_seq": 29
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.574013+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 30,
+          "sha256": "ec3921077cd8f388bcfc3a603397ee3e7ae0cd1dcfd908fe0b03e2742d4df4dd"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.758Z",
+          "details": {
+            "state": "running"
+          },
+          "event": "heartbeat",
+          "received_at_utc": "2026-10-17T13:25:29.628794+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 31,
+          "sha256": "e39de3c78e3cdc9b374f8a61e0a33032187ec9a941df84944cc1cac9e7d43eac"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.829Z",
+          "details": {
+            "id": "webkit_api_matrix"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:29.696420+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 32,
+          "sha256": "2fe99cbb722292485c5ea163a4d7acc69405c567ea55fd70f493281656d02379"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.884Z",
+          "details": {
+            "ack_seq": 32
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.753325+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 33,
+          "sha256": "b08887d1a3ff0b257ea62f9b6e993db82fec65f2d645f4959561ac2be1437b1a"
+        },
+        {
+          "client_time": "2026-10-17T14:22:18.896Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Presence matrix and CSS support booleans; engine version remains unknown",
+            "hypothesis": "Standard and prefixed APIs can be measured without privileged calls",
+            "id": "webkit_api_matrix",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "cross_origin_isolated": false,
+              "css_supports": {
+                "-webkit-appearance: none": true,
+                "display: flex": true,
+                "display: grid": true
+              },
+              "features": {
+                "AudioContext": "undefined",
+                "MutationObserver": "function",
+                "SharedArrayBuffer": "undefined",
+                "TextEncoder": "function",
+                "WebKitMutationObserver": "function",
+                "Worker": "function",
+                "fetch": "function",
+                "indexedDB": "undefined",
+                "requestAnimationFrame": "function",
+                "structuredClone": "function",
+                "webkitAudioContext": "undefined",
+                "webkitIndexedDB": "undefined",
+                "webkitRequestAnimationFrame": "function"
+              },
+              "limitation": "Presence and prefix names do not identify the shipped WebKit/JSC revision"
+            },
+            "status": "PASS",
+            "suite_revision": "phase2-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:29.765106+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 34,
+          "sha256": "b740163649e9bb307b92e8f22cc6c6d18dc93cafc8f31e26c6ac9d0a6ca156b7"
+        },
+        {
+          "client_time": "2026-10-17T14:22:19.037Z",
+          "details": {
+            "ack_seq": 34
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:29.907355+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 35,
+          "sha256": "615301861cfae2762cc511ed0515dcedb8d0f43b5d92dda77eb7363c94307d6f"
+        },
+        {
+          "client_time": "2026-10-17T14:22:19.092Z",
+          "details": {
+            "note": "Browser suite returned; review individual results"
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:25:29.959819+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 36,
+          "sha256": "693d83da3845ec85917a91938547e735f2b3cdd21d02a9856bfc9e70788410bf"
+        },
+        {
+          "client_time": "2026-10-17T14:22:19.146Z",
+          "details": {
+            "ack_seq": 36
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:30.013633+00:00",
+          "run_id": "4941599f-c230-445b-992d-d99f14310430",
+          "schema_version": 1,
+          "seq": 37,
+          "sha256": "2b34492a341b609842aef97371a20cc2c20b5da81ef03a66cfbdac357a69e6d5"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:33.680021+00:00",
+        "expected_test_ids": [
+          "worker_context"
+        ],
+        "experiment": "browser-context",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "compilation_attempts": 0,
+          "messages": 1,
+          "test_timeout_ms": 3000,
+          "worker_deadline_ms": 2000,
+          "workers": 1
+        },
+        "random_seed": 2391515832,
+        "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+        "suite": "context",
+        "suite_revision": "context-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:22.931Z",
+          "details": {
+            "parameters": {
+              "compilation_attempts": 0,
+              "messages": 1,
+              "test_timeout_ms": 3000,
+              "worker_deadline_ms": 2000,
+              "workers": 1
+            },
+            "random_seed": 2391515832,
+            "suite": "context"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:33.802797+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "73a0171b812692fa7c79b81a26e0d747ddb768200b405837d5ecf08fb3552fec"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.049Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:33.916942+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "431b6826692844fdc41c24fa5e65eec647c7f78a36c1b109cca00644cbd343f9"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.059Z",
+          "details": {
+            "id": "worker_context"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:33.926775+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "f143f836f91c48cb99cca83a76bd91211364822a6314c1028fbe006ecbf8d81c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.111Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:33.980287+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "fcc926009a49a97fc63f68476cdd8b31d8140b963e749f7e69b947ac45d68348"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.133Z",
+          "details": {
+            "elapsed_ms": 10,
+            "expected": "One worker reply with API types and presence; both absence and presence are observations",
+            "hypothesis": "The same-origin worker context may expose a different API set from the page",
+            "id": "worker_context",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "limitation": "Ordinary worker execution stays inside the browser sandbox; API exposure does not identify build flags or privileges",
+              "page": {
+                "features": {
+                  "SharedArrayBuffer": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "TextEncoder": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "WebAssembly": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "Worker": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "fetch": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "indexedDB": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "performance": {
+                    "present": true,
+                    "type": "object"
+                  }
+                },
+                "secure_context": true,
+                "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+              },
+              "worker": {
+                "features": {
+                  "SharedArrayBuffer": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "TextEncoder": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "WebAssembly": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "Worker": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "fetch": {
+                    "present": true,
+                    "type": "function"
+                  },
+                  "indexedDB": {
+                    "present": false,
+                    "type": "undefined"
+                  },
+                  "performance": {
+                    "present": true,
+                    "type": "object"
+                  }
+                },
+                "secure_context": true,
+                "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+              },
+              "worker_created": true,
+              "worker_terminated": true
+            },
+            "status": "PASS",
+            "suite_revision": "context-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:34.002407+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "996d1caee2970fb592ce44e35575bfec67431a87e85cb9b8663aa6e57336cce7"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.253Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:34.122028+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "f054c843dbaf7c938efc403516c6f1a5025737c8167ee42b98dd01d1507ecc93"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.306Z",
+          "details": {
+            "note": "Browser suite returned; review individual results"
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:25:34.174567+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "b85278f888acbd1def9390f394ca593ec88c557ec6bf2047f666b7a8a43e40f2"
+        },
+        {
+          "client_time": "2026-10-17T14:22:23.359Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:34.226739+00:00",
+          "run_id": "a4023d2e-5003-4b27-afc5-f926429d6490",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "0fa4dbc43ecffbf2be2fdc2cb879f630fb4db784aee299a746288bded54976b3"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:38.909432+00:00",
+        "expected_test_ids": [
+          "worker_messaging"
+        ],
+        "experiment": "browser-messaging",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "buffer_bytes": 32,
+          "compilation_attempts": 0,
+          "messages": 2,
+          "test_timeout_ms": 3000,
+          "worker_deadline_ms": 2000,
+          "workers": 1
+        },
+        "random_seed": 1380794267,
+        "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+        "suite": "messaging",
+        "suite_revision": "messaging-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:28.155Z",
+          "details": {
+            "parameters": {
+              "buffer_bytes": 32,
+              "compilation_attempts": 0,
+              "messages": 2,
+              "test_timeout_ms": 3000,
+              "worker_deadline_ms": 2000,
+              "workers": 1
+            },
+            "random_seed": 1380794267,
+            "suite": "messaging"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:39.022217+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "ec225271762066580827f286022d2dbec5840ff597668ece7e65ba2264c287a3"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.273Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:39.141306+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "22893084dec802fdebfdf362d5b1414a23211dac3b3b53a4c1c5e61f9e387b7a"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.284Z",
+          "details": {
+            "id": "worker_messaging"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:39.151136+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "0a5d95ced84c7ab2f51a0152fa74cc42b4d259f7a34b2184135447dabf0ef0e5"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.339Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:39.206920+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "4988895376dddd1254a3bb3ada267df1cc26d437a95da313b947e21a509c776b"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.358Z",
+          "details": {
+            "elapsed_ms": 9,
+            "expected": "Clone preserves sender data; transfer detaches sender buffer and returns all 32 bytes",
+            "hypothesis": "Ordinary worker messages clone data independently and transfer ArrayBuffer ownership",
+            "id": "worker_messaging",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "buffer_bytes": 32,
+              "clone": {
+                "returned_object_value": 99,
+                "returned_pattern": true,
+                "sender_bytes": 32,
+                "sender_first_byte": 0,
+                "sender_object_value": 7,
+                "worker_input_pattern": true,
+                "worker_received_bytes": 32
+              },
+              "messages": 2,
+              "sender_bytes_after_transfer": 0,
+              "transfer": {
+                "returned_object_value": 99,
+                "returned_pattern": true,
+                "worker_input_pattern": true,
+                "worker_received_bytes": 32
+              },
+              "worker_created": true,
+              "worker_terminated": true
+            },
+            "status": "PASS",
+            "suite_revision": "messaging-001",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:39.226882+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "bb03f284faee8beb8325038e4fad3aa6fb1acc918325b3b41742b029ea8ee767"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.477Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:39.345189+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "0b7bf561b89e9d32941b7d865e46b7d2b843f3e65f69d568fbdc5ae13d6f9272"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.534Z",
+          "details": {
+            "note": "Browser suite returned; review individual results"
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:25:39.402504+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "2daa6f1c44b3bcd736d905000ac0d50f4fe2c5534446210dcd4eaac75921fcba"
+        },
+        {
+          "client_time": "2026-10-17T14:22:28.593Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:39.460611+00:00",
+          "run_id": "34010b88-3e53-4db8-9a44-1c1ccff7b011",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "d5744611883d774dc91264c9106666f014d8e9b350c1e525d58580b577ba314f"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:45.325193+00:00",
+        "expected_test_ids": [
+          "ssv_history_basic",
+          "ssv_duplicate_ref",
+          "ssv_bigint_below_boundary",
+          "ssv_bigint_at_boundary",
+          "ssv_bigint_above_boundary",
+          "ssv_canary_after_probe"
+        ],
+        "experiment": "browser-ssvprobe",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "bigint_counts": [
+            252,
+            254,
+            300
+          ],
+          "max_graph_elements": 302,
+          "resource_exhaustion": false,
+          "sequential": true,
+          "test_timeout_ms": 3000,
+          "tests": 6
+        },
+        "random_seed": 661305471,
+        "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+        "suite": "ssvprobe",
+        "suite_revision": "ssvprobe-002",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:34.575Z",
+          "details": {
+            "parameters": {
+              "bigint_counts": [
+                252,
+                254,
+                300
+              ],
+              "max_graph_elements": 302,
+              "resource_exhaustion": false,
+              "sequential": true,
+              "test_timeout_ms": 3000,
+              "tests": 6
+            },
+            "random_seed": 661305471,
+            "suite": "ssvprobe"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:45.443178+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "0e710cd2d0bc0e43c7a62f290b7cfafd283a1a1874d96d1a39f92f47f63f05ef"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.689Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:45.556354+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "62a61920d3be29fbe99d0d8ae41cd08662bafc26f491f9f29b971253ad60d5ef"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.700Z",
+          "details": {
+            "id": "ssv_history_basic"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:45.567568+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "737be681a288af1339f5aae5f379a8678310ef7729b3589f5baa876a00ee2cb3"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.757Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:45.623934+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "5d3f3f019aadf36b08454d2da3843ac2227b177f862285ab12439da109028cbf"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.768Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Roundtrip preserves structure",
+            "hypothesis": "history.replaceState accepts and returns a simple object graph",
+            "id": "ssv_history_basic",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "a_match": true,
+              "b_match": true,
+              "c_length": 3,
+              "c_match": true,
+              "status": "PASS"
+            },
+            "status": "PASS",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:45.635506+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "d7f23c37f08593bfd9da77532a467ab2e94fe02bec379aa4c460bb8c07ab375b"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.887Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:45.755203+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "70105185be22839edc25ec766cafd1538643974982d2de1527539f09fba3f229"
+        },
+        {
+          "client_time": "2026-10-17T14:22:34.949Z",
+          "details": {
+            "id": "ssv_duplicate_ref"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:45.816998+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "3b18bd411a6ce22301dd5cf4d6eb7e145f25b3cc6c8ec050fe8c7ec09abd5a0f"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.010Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:45.879155+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "bad072cc171dc77197e71ab4139477a559dec78d1f86f43731cfcf9e5858d2cd"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.072Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "result[0] and result[2] are the same object",
+            "hypothesis": "Structured clone preserves object identity for duplicate references",
+            "id": "ssv_duplicate_ref",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "first_id": "DUPREF",
+              "first_value": 42,
+              "length": 3,
+              "same_reference": true,
+              "status": "PASS",
+              "third_id": "DUPREF",
+              "third_value": 42,
+              "values_match": true
+            },
+            "status": "PASS",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:45.939959+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 9,
+          "sha256": "57cc8f3eb4ac05f1fddc928aef3ef414a5470211f8ce55c304fbc0a3e780188a"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.197Z",
+          "details": {
+            "ack_seq": 9
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.065365+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 10,
+          "sha256": "8af97b02eb62ff5fe4e059b136ce3a4ecac3366290222c2007b74c9d57840c40"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.257Z",
+          "details": {
+            "id": "ssv_bigint_below_boundary"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:46.124731+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 11,
+          "sha256": "6e3570d49772b747e7379eb08da840b78a8315af06cb9b9eb31a30ff87793677"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.318Z",
+          "details": {
+            "ack_seq": 11
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.189352+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 12,
+          "sha256": "c8cec6c3406f3c185d89cfd0b4a4da6f69db0b4694fbb9140a0edccc066076b2"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.380Z",
+          "details": {
+            "elapsed_ms": 0,
+            "expected": "Backreference resolves to the original marker and preserves its values",
+            "hypothesis": "Duplicate-reference roundtrip with a smaller BigInt graph",
+            "id": "ssv_bigint_below_boundary",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "array_length": 254,
+              "bigint_count": 252,
+              "first_id": "BELOW",
+              "first_sentinel": 190,
+              "last_id": "BELOW",
+              "last_is_object": true,
+              "last_sentinel": 190,
+              "last_type": "object",
+              "same_reference": true,
+              "status": "PASS"
+            },
+            "status": "PASS",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:46.249536+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 13,
+          "sha256": "28827c8ea85ae9e0926dc1b68c3e66ef4253ccec29d1e02b3ba0a3c23a22cb9b"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.507Z",
+          "details": {
+            "ack_seq": 13
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.375567+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 14,
+          "sha256": "c405ae83e5bbf1c5366df6383f34435c1eb87ed214cf1f8b995fd5fbc3731653"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.570Z",
+          "details": {
+            "id": "ssv_bigint_at_boundary"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:46.438742+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 15,
+          "sha256": "61fb592955d7228bcc9260f8ba52c0ee57b15599891e9767728231a7efba18a9"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.630Z",
+          "details": {
+            "ack_seq": 15
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.498459+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 16,
+          "sha256": "f5202c65bddb54681b6d2a2750646dc4cba94c856a8d977860c87ca994047e29"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.692Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Backreference resolves to the original marker and preserves its values",
+            "hypothesis": "Duplicate-reference roundtrip with 254 BigInts near the probe hypothesized pool-size transition",
+            "id": "ssv_bigint_at_boundary",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "bigint_count": 254,
+              "error": "TypeError: Unable to deserialize data.",
+              "interpretation": "History state access threw; this is a JavaScript exception, not proof of memory corruption",
+              "phase": "state_access",
+              "status": "EXCEPTION"
+            },
+            "status": "EXCEPTION",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:46.561797+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 17,
+          "sha256": "e10ee0867089ab79e01473e1990299e20de94ab8652a48c925b6255484456ed7"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.822Z",
+          "details": {
+            "ack_seq": 17
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.691219+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 18,
+          "sha256": "85f3bdd1d93a96c22022b7ce2ab2134c3508a8c46ea30c1b3d8d9c5a0f9096e8"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.882Z",
+          "details": {
+            "id": "ssv_bigint_above_boundary"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:46.753314+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 19,
+          "sha256": "d2e8b930926b3d60a5ef297dea8b371da07cffbcab2acd2cc70f6af6a4634a0e"
+        },
+        {
+          "client_time": "2026-10-17T14:22:35.940Z",
+          "details": {
+            "ack_seq": 19
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:46.808251+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 20,
+          "sha256": "1132af8cea482701d04e3b70e39c7246de037c92655e690d444891d0b192da2d"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.002Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Backreference resolves to the original marker and preserves its values",
+            "hypothesis": "Duplicate-reference roundtrip with a larger graph containing 300 BigInts",
+            "id": "ssv_bigint_above_boundary",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "bigint_count": 300,
+              "error": "TypeError: Unable to deserialize data.",
+              "interpretation": "History state access threw; this is a JavaScript exception, not confirmation of a pool bug",
+              "phase": "state_access",
+              "status": "EXCEPTION"
+            },
+            "status": "EXCEPTION",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:46.873372+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 21,
+          "sha256": "11935e2410130be91181aa6060b9c47de4b763edb247de320c1f935a7915bc69"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.136Z",
+          "details": {
+            "ack_seq": 21
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:47.009883+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 22,
+          "sha256": "6ad85e339edd64ca21f42eccdcfe88d8e44b0694861b7bf3f4436a4a08204ec7"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.196Z",
+          "details": {
+            "id": "ssv_canary_after_probe"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:47.064093+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 23,
+          "sha256": "0e6944860147f3498d367d095928a440ed1d13af836b081ee7fe21b166d47d79"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.254Z",
+          "details": {
+            "ack_seq": 23
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:47.122020+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 24,
+          "sha256": "6771638f964395314e190780bd16a604a8e5c705a738b029da65467c0b9222b3"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.318Z",
+          "details": {
+            "elapsed_ms": 1,
+            "expected": "Basic structured clone still works",
+            "hypothesis": "Browser remains functional after pool boundary tests",
+            "id": "ssv_canary_after_probe",
+            "limitations": "Ordinary browser semantics only; synchronous hangs cannot be interrupted by this timeout.",
+            "observed": {
+              "browser_stable": true,
+              "clone_ok": true,
+              "status": "PASS"
+            },
+            "status": "PASS",
+            "suite_revision": "ssvprobe-002",
+            "timeout_ms": 3000
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:25:47.187562+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 25,
+          "sha256": "8d0cfb79a74c0dc195e4e0eef77d7b1aef6e34010b1d47e28e961e86510c9d4c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.455Z",
+          "details": {
+            "ack_seq": 25
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:47.323980+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 26,
+          "sha256": "fbb03f82f8216b56ac101595bbcefcd1ba4eaa50b23a50f0ce5b02e6430d7870"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.518Z",
+          "details": {
+            "note": "Browser suite returned; review individual results"
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:25:47.387041+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 27,
+          "sha256": "04ff0ff76e7eb66d4d4758c663fd747439420595a6cc8ef99b788e464687e2b4"
+        },
+        {
+          "client_time": "2026-10-17T14:22:36.578Z",
+          "details": {
+            "ack_seq": 27
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:47.450415+00:00",
+          "run_id": "06fdf5bb-7bb1-40ab-9079-8b9319e1e629",
+          "schema_version": 1,
+          "seq": 28,
+          "sha256": "79c37f18e9263c9e2dde604caaf5b84a0592d703a616842e8a342f35aeb5db90"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:51.866229+00:00",
+        "expected_test_ids": [
+          "transformstream_plain_object"
+        ],
+        "experiment": "browser-transformstream-regression",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "automatic_retry": false,
+          "buffer_allocation_bytes": 0,
+          "case": "plain-object substitution",
+          "cases": 1,
+          "constructor_calls": 1,
+          "iterator_overrides": 1,
+          "soft_deadline_ms": 5000
+        },
+        "random_seed": 295863720,
+        "run_id": "8f7680f8-9a91-406f-85b2-a790253fcdc5",
+        "suite": "transformstream_regression",
+        "suite_revision": "ts-regression-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:41.013Z",
+          "details": {
+            "scope": "one plain-object substitution; manual click; no auto-repeat",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "ts-regression-001"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:51.882505+00:00",
+          "run_id": "8f7680f8-9a91-406f-85b2-a790253fcdc5",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "319f6b9efecb2570ff95ef85010a4be8f538eaee85f58ce5c8845b35951fc189"
+        },
+        {
+          "client_time": "2026-10-17T14:22:41.025Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:51.892619+00:00",
+          "run_id": "8f7680f8-9a91-406f-85b2-a790253fcdc5",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "7ddcdeb786886e25562fb51a890151924e32b422b7ca8e95872b5021b2ba6a69"
+        },
+        {
+          "client_time": "2026-10-17T14:22:41.035Z",
+          "details": {
+            "case_dispatch_attempted": true,
+            "execution_confirmed": false,
+            "id": "transformstream_plain_object",
+            "soft_deadline_ms": 5000
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:51.903987+00:00",
+          "run_id": "8f7680f8-9a91-406f-85b2-a790253fcdc5",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "7dfbcf938f7df08ffeae39dc9eb7a4d921508444898b681041f3c135bb1e8081"
+        },
+        {
+          "client_time": "2026-10-17T14:22:41.045Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:51.912600+00:00",
+          "run_id": "8f7680f8-9a91-406f-85b2-a790253fcdc5",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "7f16631a298dba23b1bf942a3dd58331e648f147d7bc96c4e9bdf015dc64f1fb"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:54.016809+00:00",
+        "expected_test_ids": [
+          "transformstream_plain_object"
+        ],
+        "experiment": "browser-transformstream-regression",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "automatic_retry": false,
+          "buffer_allocation_bytes": 0,
+          "case": "plain-object substitution",
+          "cases": 1,
+          "constructor_calls": 1,
+          "iterator_overrides": 1,
+          "soft_deadline_ms": 5000
+        },
+        "random_seed": 1228906459,
+        "run_id": "f167cdf9-2c12-45a8-b6cd-bba84953ea0b",
+        "suite": "transformstream_regression",
+        "suite_revision": "ts-regression-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:43.164Z",
+          "details": {
+            "scope": "one plain-object substitution; manual click; no auto-repeat",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "ts-regression-001"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:54.031761+00:00",
+          "run_id": "f167cdf9-2c12-45a8-b6cd-bba84953ea0b",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "06da904cb5d8213c79ddbebd1857c7c17e93fae09e4356111a4fe397a834324c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:43.174Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:54.041312+00:00",
+          "run_id": "f167cdf9-2c12-45a8-b6cd-bba84953ea0b",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "1de0ab39e5bf51d1afa0d60213ac6aaeaff63b3127ff0a5eb4aedbc1e3167087"
+        },
+        {
+          "client_time": "2026-10-17T14:22:43.183Z",
+          "details": {
+            "case_dispatch_attempted": true,
+            "execution_confirmed": false,
+            "id": "transformstream_plain_object",
+            "soft_deadline_ms": 5000
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:54.049984+00:00",
+          "run_id": "f167cdf9-2c12-45a8-b6cd-bba84953ea0b",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "d256a24c0b062c4297926acd339c53d0035fa948de4682ebd2646ee5f2c5bd42"
+        },
+        {
+          "client_time": "2026-10-17T14:22:43.192Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:54.059221+00:00",
+          "run_id": "f167cdf9-2c12-45a8-b6cd-bba84953ea0b",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "6ec4443221a8869b4270a81313a792de3c8b3e067c6984bc90d51e422c2a67fa"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:25:55.834949+00:00",
+        "expected_test_ids": [
+          "transformstream_plain_object"
+        ],
+        "experiment": "browser-transformstream-regression",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "automatic_retry": false,
+          "buffer_allocation_bytes": 0,
+          "case": "plain-object substitution",
+          "cases": 1,
+          "constructor_calls": 1,
+          "iterator_overrides": 1,
+          "soft_deadline_ms": 5000
+        },
+        "random_seed": 644280549,
+        "run_id": "0de2dfc6-03f6-4cc4-9748-bca5f76ddb91",
+        "suite": "transformstream_regression",
+        "suite_revision": "ts-regression-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:44.982Z",
+          "details": {
+            "scope": "one plain-object substitution; manual click; no auto-repeat",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "ts-regression-001"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:25:55.849928+00:00",
+          "run_id": "0de2dfc6-03f6-4cc4-9748-bca5f76ddb91",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "bfd48bd1130f7d13dc9137ec57f91bf415c7c43c52b7a4467546687758befe02"
+        },
+        {
+          "client_time": "2026-10-17T14:22:44.993Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:55.859824+00:00",
+          "run_id": "0de2dfc6-03f6-4cc4-9748-bca5f76ddb91",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "f9ff001519d1fa837c56b2ee993876a2270d6cf737ca1fad4811fa45282e1e14"
+        },
+        {
+          "client_time": "2026-10-17T14:22:45.005Z",
+          "details": {
+            "case_dispatch_attempted": true,
+            "execution_confirmed": false,
+            "id": "transformstream_plain_object",
+            "soft_deadline_ms": 5000
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:25:55.874228+00:00",
+          "run_id": "0de2dfc6-03f6-4cc4-9748-bca5f76ddb91",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "4fcf28e51a28fde4a957a6f458c352a61a878ded28ce85aeab3c609d5e2ab37c"
+        },
+        {
+          "client_time": "2026-10-17T14:22:45.016Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:25:55.883305+00:00",
+          "run_id": "0de2dfc6-03f6-4cc4-9748-bca5f76ddb91",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "835168986b444776807c18ed3728202e0a9a2e93dea0ebb5c6bf4a919f7d1dca"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:26:04.309769+00:00",
+        "expected_test_ids": [
+          "datalist_button_type_change"
+        ],
+        "experiment": "webkit-datalist-lifetime",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "attempts": 1,
+          "automatic_retry": false,
+          "forced_gc": false,
+          "heap_churn": false,
+          "max_click_wait_ms": 30000,
+          "resource_allocations": "fixed DOM only",
+          "security_conclusion_on_survival": "none"
+        },
+        "random_seed": 4196376233,
+        "run_id": "638c7456-a041-4d5b-9c45-76992b8207b4",
+        "suite": "datalist_uaf_probe",
+        "suite_revision": "datalist-lifetime-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:22:53.456Z",
+          "details": {
+            "automatic_click": false,
+            "automatic_retry": false,
+            "forced_gc": false,
+            "heap_churn": false,
+            "page_feature_observation": {
+              "html_datalist_interface_type": "undefined",
+              "input_list_matches_page_element": false,
+              "input_list_property_present": false,
+              "native_control_visibility": "operator_reported_after_visual_check"
+            },
+            "scope": "one manual datalist-control click followed by one input type change",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "datalist-lifetime-001",
+            "test_source_sha256": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:26:04.323577+00:00",
+          "run_id": "638c7456-a041-4d5b-9c45-76992b8207b4",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "0c21482e8a7dd4049d6f9cd9014e83f182a549254fe77e4d066f24968b1d27a6"
+        },
+        {
+          "client_time": "2026-10-17T14:22:53.488Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:04.356054+00:00",
+          "run_id": "638c7456-a041-4d5b-9c45-76992b8207b4",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "4d140adf2ae46c077c743e353703fc545aa71f5efb850853e46e8f1077d344b1"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:26:18.207577+00:00",
+        "expected_test_ids": [
+          "datalist_button_type_change"
+        ],
+        "experiment": "webkit-datalist-lifetime",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "attempts": 1,
+          "automatic_retry": false,
+          "forced_gc": false,
+          "heap_churn": false,
+          "max_click_wait_ms": 30000,
+          "resource_allocations": "fixed DOM only",
+          "security_conclusion_on_survival": "none"
+        },
+        "random_seed": 2156557308,
+        "run_id": "0afb7dc6-85f7-47ee-b001-ee9e63901d62",
+        "suite": "datalist_uaf_probe",
+        "suite_revision": "datalist-lifetime-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:23:07.365Z",
+          "details": {
+            "automatic_click": false,
+            "automatic_retry": false,
+            "forced_gc": false,
+            "heap_churn": false,
+            "page_feature_observation": {
+              "html_datalist_interface_type": "undefined",
+              "input_list_matches_page_element": false,
+              "input_list_property_present": false,
+              "native_control_visibility": "operator_reported_after_visual_check"
+            },
+            "scope": "one manual datalist-control click followed by one input type change",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "datalist-lifetime-001",
+            "test_source_sha256": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:26:18.233701+00:00",
+          "run_id": "0afb7dc6-85f7-47ee-b001-ee9e63901d62",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "551be696996ebef50bdadf533c71ad281fdc50d10863b8dd1a2af3d11d721096"
+        },
+        {
+          "client_time": "2026-10-17T14:23:07.395Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:18.262279+00:00",
+          "run_id": "0afb7dc6-85f7-47ee-b001-ee9e63901d62",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "682eedd161440d10a7d7d6f37318b3b08e38f41ef6bbd47586bef444b8167c29"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "created_at_utc": "2026-10-17T13:26:28.851844+00:00",
+        "expected_test_ids": [
+          "transformstream_exposure"
+        ],
+        "experiment": "browser-transformstream-feature",
+        "firmware": "13.60",
+        "metadata_verification": "unverified_self_report",
+        "model": "",
+        "origin_label": "ps5_hardware_reported",
+        "parameters": {
+          "checks": 1,
+          "constructor_calls": 0,
+          "iterator_mutations": 0
+        },
+        "random_seed": 3126373941,
+        "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+        "suite": "transformstream_feature",
+        "suite_revision": "ts-feature-001",
+        "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+        "version": {
+          "files": {
+            "dashboard/comparison.js": "dd21b8c06372697ab7683ae044a32237035a14bfb88cf8310360c9354be52ec8",
+            "dashboard/dashboard.js": "3d4702aa00f42e3ec9ac1b1a24d670aa1c1a5f5aa6f9a1b48274bc46ff343246",
+            "dashboard/index.html": "e8fe36ffcbcd100dcf4d81f655510735d32ba4b0337553741e61c9ea9f18ca2b",
+            "experiments/baseline.js": "0bee7b98ee2b2757ad1cf1418e4e7c8fe622eff746e7dfb09891f8b0f838093c",
+            "experiments/context.js": "ee4957138d71ee526c965595a50f01c99bc6b05bb8f12410c0a3b33a5cf05eb3",
+            "experiments/messaging.js": "4c37556b27bb0de25ff2261211eb1f417c5f29b462cba4f29150957535face7d",
+            "experiments/phase2.js": "91d5c6a38b647335441ffd75ebd743ea9f30ecdbe6f47179024f6cd49708cb74",
+            "experiments/ssvprobe.js": "07d80958a04faccaa32977bcac0233e406c650eb26cdb3191197f8910a4aa394",
+            "server/server.py": "677d2572bf7161916ccfa01a4df942e30fa85116abc6c84a245fc20a9e32b555",
+            "web/app.js": "092029d9b97b006ce1f64ac23e628114597ab94d869579099d4ed678ded9be19",
+            "web/context-worker.js": "470e767c3d554abd6fd2e0140cf42a2daf8a32cf30683bf37f845b661da66f01",
+            "web/datalist-uaf-probe.html": "294ff87b8f3a7d0e928b03e4e15d4a01200f4cac866aa097e66d91a023b74077",
+            "web/datalist-uaf-probe.js": "399ed5ad8746f22ff94524c49b329a8ccc28810f75ddb3605dd52a443c710fc4",
+            "web/index.html": "7a9eba656eb167cfdda969f19d43e0cc0bb810d6219345d2eb1dbaad75a46f36",
+            "web/messaging-worker.js": "e5eec0dd77c0d7e818c0c0738b3f6735671d550398bb461a7183760c29383388",
+            "web/transformstream-feature.html": "936999cc14b19efa1892bd7b0c6a82c98d41d272f9f5b20f41df76af75a7573d",
+            "web/transformstream-feature.js": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d",
+            "web/transformstream-regression-case.html": "193a75511a06725d510e73c0340eac9b220e610565454ae23f3fc3cbbd3d30ce",
+            "web/transformstream-regression-case.js": "e02656c90847bb3b5e8b1e7f4246b77b891d351b0569306284def474d4ac401b",
+            "web/transformstream-regression.html": "b8df8ab5746ffcccb83ecb3bd6dd96e53ac48800b8dc924acd4da3d72147ac1b",
+            "web/transformstream-regression.js": "9f1be09fa46296d7721f0bac0638e26e95e835a208149cd1bdda437340b26c35",
+            "web/ui.css": "e6552af169ebba1b34e86d0774a95fa2e15b34d50f0e1ae8e7133e96b52e60a1"
+          },
+          "git_commit": null,
+          "git_note": "Source hashes are authoritative; no project commit created.",
+          "revision": "diagnostics-003",
+          "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7"
+        }
+      },
+      "events": [
+        {
+          "client_time": "2026-10-17T14:23:17.998Z",
+          "details": {
+            "scope": "passive API exposure",
+            "source_sha256": "c9f3ea8410a097c3a6bd645fb022d77507f01347f2fab33c36a655fb437b2de7",
+            "suite_revision": "ts-feature-001"
+          },
+          "event": "run_start",
+          "received_at_utc": "2026-10-17T13:26:28.865417+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 1,
+          "sha256": "a18db3f82143e924e8583d01c78239e106cf33192e17b2d7fbdce353605cced0"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.008Z",
+          "details": {
+            "ack_seq": 1
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:28.875239+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 2,
+          "sha256": "f0b760224ae534f48d433c7416f46504e8322ea6bc6af84a700b12ae3692e368"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.018Z",
+          "details": {
+            "id": "transformstream_exposure"
+          },
+          "event": "test_started",
+          "received_at_utc": "2026-10-17T13:26:28.885495+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 3,
+          "sha256": "df3705318e6503502a839fc0537695778dc5f3614f456fdb958781157beeb452"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.026Z",
+          "details": {
+            "ack_seq": 3
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:28.894165+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 4,
+          "sha256": "075d7d86b3de56b52edc9279dd2c0948a5a7e0615e20aaad8a1d18fdb9e2a0b4"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.038Z",
+          "details": {
+            "elapsed_ms": 0,
+            "expected": "Record exposure only; no security conclusion",
+            "id": "transformstream_exposure",
+            "observed": {
+              "check_scope": "presence/type only; no constructor call or iterator mutation",
+              "is_function": true,
+              "is_secure_context": true,
+              "property_present": true,
+              "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/13.60) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+              "value_type": "function"
+            },
+            "status": "PASS",
+            "suite_revision": "ts-feature-001",
+            "test_source_sha256": "e8162fd7146e630e313b5d13fbea784ac62f8c346f34e05fea20f7983074f38d"
+          },
+          "event": "test_result",
+          "received_at_utc": "2026-10-17T13:26:28.905625+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 5,
+          "sha256": "95101e423930c23cbe2b832f46843005b7a4992cd26100c3bce5ee149fdcd75f"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.069Z",
+          "details": {
+            "ack_seq": 5
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:28.937028+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 6,
+          "sha256": "1fbdac848c23d77d3e7103b3ba07e67b2009d9fda1ce4b9ae39316b82c5f2fdd"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.078Z",
+          "details": {
+            "note": "Passive feature exposure was recorded; this does not establish firmware correspondence or vulnerability."
+          },
+          "event": "run_completed",
+          "received_at_utc": "2026-10-17T13:26:28.945651+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 7,
+          "sha256": "413d3135ed2e162a5297d691429e58b84219fd67caa62a2ebe6a46066b226060"
+        },
+        {
+          "client_time": "2026-10-17T14:23:18.087Z",
+          "details": {
+            "ack_seq": 7
+          },
+          "event": "checkpoint_ack",
+          "received_at_utc": "2026-10-17T13:26:28.954808+00:00",
+          "run_id": "5af7fa7b-2573-419f-a929-106234f6327e",
+          "schema_version": 1,
+          "seq": 8,
+          "sha256": "34ed5120410bcf1f261be6c5650766711b51569b03c459fe1630c0240f3ecbad"
+        }
+      ]
+    }
+  ]
+}

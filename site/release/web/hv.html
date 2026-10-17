@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10141f">
+  <meta name="referrer" content="no-referrer">
+  <title>PS5 Research — HV stage</title>
+  <link rel="stylesheet" href="hv.css">
+</head>
+<body>
+  <main class="shell">
+    <a class="back-link" href="./">← Research home</a>
+    <p class="eyebrow">PS5 / RESEARCH / 13.60</p>
+    <h1>Hypervisor stage</h1>
+    <p class="lead">Run the Relapse kernel stage first. When it reports that the ELF loader is listening on port 9021, come back here to send the Byepervisor payload to this console.</p>
+
+    <div class="notice" role="status" aria-live="polite" id="status">Checking this PS5 and the server payload…</div>
+    <p class="diagnostics-status" id="diagnostics-status" role="status" aria-live="polite">Page status and payload-transfer results are sent to this local research server. The browser cannot read native PS5 notifications.</p>
+
+    <section class="panel">
+      <h2>1. Run Relapse</h2>
+      <p>The upstream Relapse 13.60 page uses a manual start button. Wait for the screen to report that the kernel stage finished and the ELF loader is listening on port 9021.</p>
+      <a class="button secondary" href="relapse/">Open Relapse 13.60</a>
+    </section>
+
+    <section class="panel">
+      <h2>2. Send Byepervisor</h2>
+      <p>The server sends the compiled upstream ELF only to the PS5 that opened this page. Sending works only after Relapse has started its ELF loader.</p>
+      <label class="confirm-row">
+        <input id="loader-ready" type="checkbox">
+        <span>I ran Relapse on this PS5 and its screen says the ELF loader is listening on port 9021.</span>
+      </label>
+      <button id="send-payload" disabled>Send Byepervisor payload</button>
+      <p id="send-result" class="result" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel notes">
+      <h2>3. Follow the PS5 notification</h2>
+      <p>The payload should say “Enter sleep and resume!” Use <strong>Enter Rest Mode</strong>, then wake the console. Its success notification says the hypervisor is defeated. A payload transfer by itself is not proof of success.</p>
+      <label class="confirm-row">
+        <input id="hv-confirmed" type="checkbox">
+        <span>After waking the PS5, I saw the “hypervisor is defeated” success notification.</span>
+      </label>
+      <p class="note">Checking this box sends your confirmation to the local research server. The browser cannot inspect the PS5 notification itself.</p>
+      <p>If this is a Pro model, the payload detects that automatically. If the console shuts down when resuming, the attempt failed; reboot and restart the chain before another attempt.</p>
+      <p>Upstream describes this as a developer base, not a ready-to-use homebrew release. It provides the HV bypass and kernel text read/write access, but does not install HEN, debug patches, or other homebrew.</p>
+      <p>For the rest-mode path, set <strong>Settings → System → Power Saving → Features Available in Rest Mode → Supply Power to USB Ports → Always</strong> if the payload asks for it.</p>
+    </section>
+
+    <footer>
+      <p>Firmware and browser model are reported by the console browser. Check Settings → System → System Software → Console Information before starting.</p>
+      <p>Source: <a href="https://github.com/PS5Dev/Byepervisor-Reborn">PS5Dev/Byepervisor-Reborn</a>. Built from commit <code>ea04f7132b837087f552c57261cb800481a3a910</code>.</p>
+      <p><a href="https://github.com/ntfargo/Relapse-Exploit">ntfargo/Relapse-Exploit</a></p>
+    </footer>
+  </main>
+  <script src="relapse/diagnostics.js"></script>
+  <script src="hv.js" defer></script>
+</body>
+</html>

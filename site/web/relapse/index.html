@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>PS5 Research — Relapse 13.60</title>
+  <link rel="stylesheet" href="launch.css">
+  <script src="diagnostics.js"></script>
+  <script src="src/firmware.js"></script>
+  <script src="launch.js" defer></script>
+</head>
+<body>
+  <main>
+    <a class="back" href="../hv">← HV setup</a>
+    <p class="eyebrow">PS5 / RESEARCH / FIRMWARE 13.60</p>
+    <h1>Relapse</h1>
+    <p class="lead">Start the upstream Relapse exploit chain on this PS5. When the kernel stage finishes, this page reports the ELF loader port needed for the HV stage.</p>
+    <div id="firmware-status" class="notice" role="status" aria-live="polite">Checking firmware support…</div>
+    <button id="start-relapse" disabled>Start Relapse</button>
+    <section class="console-panel" aria-label="Relapse output">
+      <h2>Console output</h2>
+      <pre id="console" aria-live="polite">Relapse has not started.</pre>
+    </section>
+    <p id="diagnostics-status" class="diagnostics-status" role="status" aria-live="polite">Run messages and JavaScript errors are automatically sent to this site’s server for troubleshooting. Memory addresses are removed.</p>
+    <p class="note">Keep the PS5 on this page while the exploit runs. It may take several attempts. When it reports “elfldr is listening on port 9021,” open the HV setup page from the User’s Guide.</p>
+    <footer>Upstream source: <a href="https://github.com/ntfargo/Relapse-Exploit">ntfargo/Relapse-Exploit</a> · <a href="https://github.com/PS5Dev/Byepervisor-Reborn">PS5Dev/Byepervisor-Reborn</a></footer>
+  </main>
+  <script src="src/main.js"></script>
+  <script src="src/rop.js"></script>
+  <script src="src/utils/syscalls.js"></script>
+</body>
+</html>

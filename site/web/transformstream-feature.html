@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TransformStream feature availability</title>
+  <link rel="stylesheet" href="ui.css">
+  <script src="transformstream-feature.js" defer></script>
+</head>
+<body class="console-page">
+  <main>
+    <header class="topbar"><div class="identity">PS5 / Research</div><nav class="utilities"><a href="./">Test library</a><a href="dashboard">Dashboard</a></nav></header>
+    <section class="selected-suite">
+      <p class="section-label">PASSIVE FEATURE CHECK</p>
+      <h1>TransformStream availability</h1>
+      <p>This reports whether the page context exposes the TransformStream global. It does not construct a stream, change JavaScript iterators, or test for a vulnerability.</p>
+      <p class="scope-note">API exposure alone does not show which implementation is present or whether it is vulnerable.</p>
+    </section>
+    <section class="settings-panel" aria-label="Run provenance">
+      <h2>Run provenance</h2>
+      <label>Device type
+        <select id="origin"><option value="desktop_simulation">Desktop browser</option><option value="ps5_hardware_reported">Physical PS5 (operator reported)</option></select>
+      </label>
+      <label>Firmware, if known <input id="firmware" maxlength="80" placeholder="Optional"></label>
+      <label>Model, if known <input id="model" maxlength="80" placeholder="Optional"></label>
+      <p>Browser and source hashes are attached automatically. Device and firmware labels are self-reported.</p>
+    </section>
+    <section class="session-panel" aria-label="Check result">
+      <p id="state" role="status" aria-live="polite">Checking collector…</p>
+      <button id="start" type="button" disabled>Run passive check</button>
+      <button id="download" class="secondary-button" type="button" disabled>Download raw result</button>
+      <pre id="result" aria-live="polite"></pre>
+    </section>
+  </main>
+</body>
+</html>
