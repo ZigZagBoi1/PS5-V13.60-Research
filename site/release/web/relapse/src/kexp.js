@@ -92,7 +92,7 @@ function resolveSymbols(p) {
 }
 
 async function fetchBinary(name) {
-  const response = await fetch("payloads/" + name);
+  const response = await fetch(new URL("../payloads/" + name, import.meta.url));
   if (!response.ok) throw new Error("kexp: " + name + " returned HTTP " + response.status);
   return new Uint8Array(await response.arrayBuffer());
 }

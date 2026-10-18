@@ -1,0 +1,106 @@
+[
+  {
+    "path": "relapse/index.html",
+    "http": 200,
+    "bytes": 2630,
+    "live_sha256": "c1e9c49abc8cc0ab6aa82f0bfef38a364012dd80a32396f9080d5b7cf2687273",
+    "release_sha256": "c1e9c49abc8cc0ab6aa82f0bfef38a364012dd80a32396f9080d5b7cf2687273",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/src/relapse_exploit.js",
+    "http": 200,
+    "bytes": 42107,
+    "live_sha256": "c9b4f93ca762d84b991dbd1cadd7119064714b9ea13f6f0d88ff83e0ee0f7bff",
+    "release_sha256": "c9b4f93ca762d84b991dbd1cadd7119064714b9ea13f6f0d88ff83e0ee0f7bff",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/src/main.js",
+    "http": 200,
+    "bytes": 9267,
+    "live_sha256": "b4b47baf2f17640ffa16aca7940766a2ef3f3b9b7ba552814ecbfdee0487d321",
+    "release_sha256": "b4b47baf2f17640ffa16aca7940766a2ef3f3b9b7ba552814ecbfdee0487d321",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/src/site.js",
+    "http": 200,
+    "bytes": 2366,
+    "live_sha256": "a7d4610d638724b9ee5c684253606c9036c6cb4c019939116ac0e8c65ad81a28",
+    "release_sha256": "a7d4610d638724b9ee5c684253606c9036c6cb4c019939116ac0e8c65ad81a28",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/src/kexp.js",
+    "http": 200,
+    "bytes": 10694,
+    "live_sha256": "a0c1b03c7965fa2a0016b090d93630251c2f46dadbf1c52abffbac2d87acfb29",
+    "release_sha256": "a0c1b03c7965fa2a0016b090d93630251c2f46dadbf1c52abffbac2d87acfb29",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/offsets/13.60.js",
+    "http": 200,
+    "bytes": 11813,
+    "live_sha256": "4ad371c68885efbbb3f39075203a4e7d9514aa1722c3872bc145432a48237e7e",
+    "release_sha256": "4ad371c68885efbbb3f39075203a4e7d9514aa1722c3872bc145432a48237e7e",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/payloads/elfldr-ps5-1360.elf",
+    "http": 200,
+    "bytes": 397024,
+    "live_sha256": "de5dd480d12637527ba2d75e35de851adbb59c455293fa32588c492ef6b44b81",
+    "release_sha256": "de5dd480d12637527ba2d75e35de851adbb59c455293fa32588c492ef6b44b81",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/payloads/kexp_2026_05_25.bin",
+    "http": 200,
+    "bytes": 18912,
+    "live_sha256": "7cfb3a8cb86db67893c360ae3531f460f800e9f24039797038e6e81fc50f18a9",
+    "release_sha256": "7cfb3a8cb86db67893c360ae3531f460f800e9f24039797038e6e81fc50f18a9",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/launch.js",
+    "http": 200,
+    "bytes": 2129,
+    "live_sha256": "9265b24e1a43ca8e3fb0d2687c810466b79ac1d4b0a090b8126600e1b58d19e8",
+    "release_sha256": "9265b24e1a43ca8e3fb0d2687c810466b79ac1d4b0a090b8126600e1b58d19e8",
+    "matches_release": true
+  },
+  {
+    "path": "relapse/diagnostics.js",
+    "http": 200,
+    "bytes": 4523,
+    "live_sha256": "b939a223744d296557a7bba665775655b8460c6a2018c4d16bc6d85abab1b8df",
+    "release_sha256": "b939a223744d296557a7bba665775655b8460c6a2018c4d16bc6d85abab1b8df",
+    "matches_release": true
+  },
+  {
+    "path": "hv.js",
+    "http": 200,
+    "bytes": 3586,
+    "live_sha256": "1abed33261ba62a1f0952d8616f1af51f4ee6fabb48e009560549e806a376de4",
+    "release_sha256": "1abed33261ba62a1f0952d8616f1af51f4ee6fabb48e009560549e806a376de4",
+    "matches_release": true
+  },
+  {
+    "path": "hv",
+    "http": 200,
+    "bytes": 3821,
+    "live_sha256": "6a9dcd81e00b527699e661ce2d718817e036975f21455a73148834c2f04b7d29",
+    "release_sha256": "6a9dcd81e00b527699e661ce2d718817e036975f21455a73148834c2f04b7d29",
+    "matches_release": true
+  },
+  {
+    "path": "api/health",
+    "http": 200,
+    "bytes": 2682,
+    "live_sha256": "2b2b8d3ec4bb57df07f047e9bfa3aac255dcd06fae2b8dd8827bc06485ea34ea",
+    "release_sha256": null,
+    "matches_release": false
+  }
+]

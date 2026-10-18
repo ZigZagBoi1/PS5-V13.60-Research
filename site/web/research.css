@@ -1,0 +1,34 @@
+body { background: radial-gradient(ellipse at 82% 8%, #254534, #101a15 42%, #080b11 78%); }
+.eyebrow { color: #a8dbb4; }
+h1 { letter-spacing: -.035em; }
+.lead { color: #c6d7ca; }
+.safety { margin: 1rem 0; padding: 1rem 1.2rem; border: 1px solid #e5bd6a9c; border-radius: .9rem; background: #4d391c99; color: #f5e5c4; }
+.safety p { margin: .35rem 0 0; }
+.card { margin: 1rem 0; padding: clamp(1rem, 2.4vw, 1.5rem); border: 1px solid #8bc79b45; border-radius: 1rem; background: #111d17e8; box-shadow: 0 12px 40px #0003; }
+.card h2 { margin: 0 0 .7rem; font-size: 1.3rem; }
+.card p { margin: .6rem 0; color: #c7d7ca; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin: 1rem 0; padding: 0; list-style: none; counter-reset: stage; }
+.steps li { display: flex; flex-direction: column; gap: .35rem; padding: .8rem; border: 1px solid #88c89c52; border-radius: .75rem; background: #1a2c21; counter-increment: stage; }
+.steps li::before { content: "0" counter(stage); color: #8fc99e; font: .8rem ui-monospace, Consolas, monospace; }
+.steps b { color: #e5f3e8; }
+.steps span, .plain-note, .next p { color: #c1d1c5; font-size: .9rem; }
+.plain-note { margin-bottom: 0 !important; }
+.safety + .flow { margin-top: 1rem; }
+.notice { border-color: #8ac69a70; background: #1a2e21; }
+.notice.ready { border-color: #9fd6a9; background: #203a27; }
+.notice.error { border-color: #e9a996; background: #442824; }
+.dump-choice { display: flex; align-items: flex-start; gap: .8rem; margin: 1rem 0; padding: 1rem; border: 1px solid #83bd8d80; border-radius: .75rem; background: #19291e; cursor: pointer; }
+.dump-choice input { width: 1.3rem; height: 1.3rem; margin: .1rem 0 0; accent-color: #92d59d; flex: none; }
+.dump-choice span { display: grid; gap: .25rem; }
+.dump-choice small { color: #c4d4c8; }
+#start-relapse { background: #b8e7be; color: #112117; }
+#start-relapse:not(:disabled):hover { background: #d0f0d4; }
+.dump-controls { border-color: #80ba8e70; background: #142118; }
+.dump-controls h3 { margin: 0; }
+.dump-buttons button { background: #d5ead8; color: #142018; }
+#dump-progress { accent-color: #94d69d; }
+.console-panel { border-color: #85bc9440; background: #101912; }
+pre { color: #d2e3d5; }
+.diagnostics-status { color: #a7dcb2; }
+footer a { color: #a9dbb3; }
+@media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }

@@ -20,6 +20,15 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_BODY = 32768
 RATE_LIMIT = 240
 MAX_RELAPSE_LOG_LINES = 500
+MAX_DUMP_FILE_BYTES = 679 * 48
+DUMP_FILE_SIZES = {'kernel_base.json': 256, 'sysent_raw.bin': MAX_DUMP_FILE_BYTES}
+SYSENT_RVA = 0xE6E5C0
+HV_PAYLOAD_SHA256 = '0c43dcd8a6119726f7245b45bca6b5c227ad4b4aeeadb6fa3a22e3f82448533f'
+HV_PAYLOAD_BYTES = 177256
+HV_UPSTREAM_COMMIT = 'ea04f7132b837087f552c57261cb800481a3a910'
+HV_READY_TTL = 600
+RELAPSE_START = 'Start Relapse selected'
+RELAPSE_READY = 'Relapse cleanup complete; HV delivery ready.'
 EVENTS = {'run_start', 'test_started', 'test_result', 'checkpoint_ack', 'heartbeat', 'javascript_error', 'run_completed', 'run_failed', 'page_hidden'}
 TERMINAL = {'run_completed', 'run_failed'}
 SUITES = {
@@ -117,13 +126,9 @@ def source_version():
     files = {}
     for directory in ('server', 'web', 'experiments', 'dashboard'):
         for path in sorted((ROOT / directory).rglob('*')):
-            if directory == 'web' and path.relative_to(ROOT / 'web').parts[0:1] == ('relapse',):
-                # The pinned upstream release is tracked by its commit in
-                # HV-INTEGRATION.md, not mixed into browser-test source hashes.
-                continue
-            if path.is_file() and path.suffix in ('.py', '.js', '.html', '.css', '.json') and '__pycache__' not in path.parts:
+            if path.is_file() and path.suffix in ('.py', '.js', '.html', '.css', '.json', '.elf', '.bin') and '__pycache__' not in path.parts:
                 files[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-    return {'revision': 'diagnostics-007', 'source_sha256': hashlib.sha256(canonical(files)).hexdigest(), 'files': files, 'git_commit': None, 'git_note': 'Source hashes are authoritative; no project commit created.'}
+    return {'revision': 'hosting-audit-008', 'source_sha256': hashlib.sha256(canonical(files)).hexdigest(), 'files': files, 'git_commit': None, 'git_note': 'Source hashes include the served Relapse integration, offsets, and loader payloads.'}
 
 def summarize(meta, events):
     end = next((e for e in reversed(events) if e['event'] in TERMINAL), None)
@@ -159,8 +164,13 @@ class Collector(ThreadingHTTPServer):
         self.max_storage_bytes = 128 * 1024 * 1024
         self.relapse_diagnostics_dir = self.data_dir / 'relapse-diagnostics'
         self.relapse_diagnostics_dir.mkdir(parents=True, exist_ok=True)
+        self.dumps_dir = self.data_dir / 'dumps'
+        self.dumps_dir.mkdir(parents=True, exist_ok=True)
+        self.dump_sessions = {}
         self.relapse_last_seq = {}
         self.relapse_digests = {}
+        self.relapse_runs = {}
+        self.hv_inflight = set()
         self.workers = threading.BoundedSemaphore(16)
         self.version = source_version()
         super().__init__(address, Handler)
@@ -193,6 +203,28 @@ class Collector(ThreadingHTTPServer):
         meta = json.loads((folder / 'metadata.json').read_text(encoding='utf-8'))
         events = [json.loads(line) for line in (folder / 'events.jsonl').read_text(encoding='utf-8').splitlines() if line] if (folder / 'events.jsonl').exists() else []
         return meta, events
+
+    def observe_relapse(self, target, session_id, firmware, lines):
+        """Called under lock, only after new diagnostic lines are durable.
+
+        This is browser-reported workflow state, not a kernel/HV attestation.
+        Server restarts deliberately require a new completed Relapse run.
+        """
+        if firmware != '13.60':
+            return
+        for line in lines:
+            if line['message'] == RELAPSE_START:
+                self.relapse_runs[target] = {'session_id': session_id, 'ready_at': None, 'transfer_state': None}
+            run = self.relapse_runs.get(target)
+            if run and run['session_id'] == session_id and line['message'] == RELAPSE_READY:
+                run['ready_at'] = time.monotonic()
+
+    def current_relapse(self, target):
+        """Caller holds lock; readiness is short-lived and tied to the console IP."""
+        run = self.relapse_runs.get(target)
+        if not run or run['ready_at'] is None or time.monotonic() - run['ready_at'] > HV_READY_TTL:
+            return None
+        return run
 
 class Handler(BaseHTTPRequestHandler):
     server_version = 'PS5Research/0.2'
@@ -286,6 +318,130 @@ class Handler(BaseHTTPRequestHandler):
             return None
         return str(address)
 
+    def dump_session(self, create=False):
+        target = self.relapse_diagnostics_client()
+        session_id = self.headers.get('X-Session')
+        if not target or not session_id:
+            return None, None
+        try:
+            if str(uuid.UUID(session_id)) != session_id:
+                return None, None
+        except (ValueError, AttributeError):
+            return None, None
+        if create:
+            self.server.dump_sessions.setdefault(session_id, {'target': target, 'chunks': {}, 'created': time.monotonic()})
+        item = self.server.dump_sessions.get(session_id)
+        return (session_id, item) if item and item['target'] == target else (None, None)
+
+    def receive_dump(self):
+        session_id, session = self.dump_session(create=True)
+        if not session:
+            return self.respond(403, {'error': 'Dump receiver is restricted to the current PS5 Relapse session.'})
+        filename = self.headers.get('X-Filename', '')
+        if filename not in DUMP_FILE_SIZES:
+            return self.respond(400, {'error': 'Unsupported dump file.'})
+        if self.headers.get('Content-Encoding') or self.headers.get('Transfer-Encoding'):
+            return self.respond(400, {'error': 'Encoded request bodies are not accepted.'})
+        try:
+            length = int(self.headers.get('Content-Length', '-1'))
+        except ValueError:
+            length = -1
+        chunk = self.headers.get('X-Chunk')
+        if filename == 'sysent_raw.bin':
+            match = re.fullmatch(r'([1-8])/8', chunk or '')
+            if not match:
+                return self.respond(400, {'error': 'Sysent chunks must be numbered 1/8 through 8/8.'})
+            index = int(match.group(1))
+            expected = 4096 if index < 8 else MAX_DUMP_FILE_BYTES - 4096 * 7
+            if length != expected:
+                return self.respond(400, {'error': 'Sysent chunk size is invalid.'})
+        elif chunk is not None or not 0 < length <= DUMP_FILE_SIZES[filename]:
+            return self.respond(400, {'error': 'Kernel-base file size or headers are invalid.'})
+        self._body_consumed = True
+        body = self.rfile.read(length)
+        if len(body) != length:
+            raise ValueError('Truncated dump body')
+        if filename == 'kernel_base.json':
+            value = json.loads(body.decode('utf-8'))
+            if (not isinstance(value, dict) or value.get('firmware') != '13.60'
+                    or not re.fullmatch(r'0x[0-9a-fA-F]{1,16}', str(value.get('kernel_base', '')))):
+                raise ValueError('Kernel base metadata is invalid')
+            body = canonical({'firmware': '13.60', 'kernel_base': value['kernel_base']})
+            if len(body) > DUMP_FILE_SIZES[filename]:
+                raise ValueError('Kernel base metadata is too large')
+        with self.server.lock:
+            directory = self.server.dumps_dir / session_id
+            directory.mkdir(parents=True, exist_ok=True)
+            if filename == 'kernel_base.json':
+                if self.server.storage_bytes + len(body) > self.server.max_storage_bytes:
+                    return self.respond(507, {'error': 'Dump storage budget reached.'})
+                path = directory / filename
+                if path.exists():
+                    return self.respond(409, {'error': 'Kernel base was already saved for this session.'})
+                path.write_bytes(body)
+                self.server.storage_bytes += len(body)
+            else:
+                index = int(chunk.split('/')[0])
+                previous = session['chunks'].get(index)
+                if previous is not None:
+                    if previous != body:
+                        return self.respond(409, {'error': 'This chunk number already has different content.'})
+                    return self.respond(200, {'ok': True, 'duplicate': True, 'session_id': session_id})
+                if self.server.storage_bytes + len(body) > self.server.max_storage_bytes:
+                    return self.respond(507, {'error': 'Dump storage budget reached.'})
+                session['chunks'][index] = body
+                self.server.storage_bytes += len(body)
+                if len(session['chunks']) == 8:
+                    raw = b''.join(session['chunks'][i] for i in range(1, 9))
+                    if len(raw) != MAX_DUMP_FILE_BYTES:
+                        raise ValueError('Assembled sysent size is invalid')
+                    base_value = json.loads((directory / 'kernel_base.json').read_text(encoding='utf-8'))['kernel_base']
+                    base = int(base_value, 16)
+                    entries = []
+                    for syscall_num in range(679):
+                        offset = syscall_num * 48
+                        narg = int.from_bytes(raw[offset:offset + 4], 'little')
+                        call = int.from_bytes(raw[offset + 8:offset + 16], 'little')
+                        entries.append({'num': syscall_num, 'narg': narg,
+                                        'sy_call': f'0x{call:x}',
+                                        'sy_call_off': f'0x{call - base:x}' if call else '0x0'})
+                    index_data = canonical({'firmware': '13.60', 'kernel_base': base_value,
+                                            'sysent_rva': hex(SYSENT_RVA), 'entries': entries})
+                    if self.server.storage_bytes + len(raw) + len(index_data) > self.server.max_storage_bytes:
+                        del session['chunks'][index]
+                        self.server.storage_bytes -= len(body)
+                        return self.respond(507, {'error': 'Dump storage budget reached.'})
+                    (directory / filename).write_bytes(raw)
+                    (directory / 'sysent_index.json').write_bytes(index_data)
+                    self.server.storage_bytes += len(raw) + len(index_data)
+        return self.respond(200, {'ok': True, 'session_id': session_id, 'file': filename,
+                                  'received_chunks': len(session['chunks']), 'complete': len(session['chunks']) == 8})
+
+    def dump_status(self, session_id):
+        target = self.relapse_diagnostics_client()
+        if not target or not session_id or not re.fullmatch(r'[a-f0-9-]{36}', session_id):
+            return self.respond(403, {'error': 'Dump status is restricted to the current PS5 session.'})
+        with self.server.lock:
+            session = self.server.dump_sessions.get(session_id)
+            if not session or session['target'] != target:
+                return self.respond(404, {'error': 'Unknown dump session.'})
+            folder = self.server.dumps_dir / session_id
+            files = [{'name': path.name, 'bytes': path.stat().st_size} for path in sorted(folder.iterdir()) if path.is_file()]
+        complete = any(item['name'] == 'sysent_index.json' for item in files)
+        return self.respond(200, {'session_id': session_id, 'complete': complete, 'files': files})
+
+    def download_dump(self, session_id, filename):
+        target = self.relapse_diagnostics_client()
+        if not target or not re.fullmatch(r'[a-f0-9-]{36}', session_id or '') or filename not in {'kernel_base.json', 'sysent_raw.bin', 'sysent_index.json'}:
+            return self.respond(403, {'error': 'Dump download is restricted to the current PS5 session.'})
+        with self.server.lock:
+            session = self.server.dump_sessions.get(session_id)
+            path = self.server.dumps_dir / session_id / filename
+            if not session or session['target'] != target or not path.is_file():
+                return self.respond(404, {'error': 'Dump file is not ready.'})
+            data = path.read_bytes()
+        self.send_bytes(200, data, 'application/octet-stream' if filename.endswith('.bin') else 'application/json; charset=utf-8')
+
     def store_relapse_diagnostics(self, value):
         target = self.relapse_diagnostics_client()
         if not target:
@@ -297,6 +453,7 @@ class Handler(BaseHTTPRequestHandler):
             last_seq = self.server.relapse_last_seq.get(session_id, 0)
             known = self.server.relapse_digests.setdefault(session_id, {})
             additions = []
+            added_lines = []
             new_digests = {}
             for line in lines:
                 normalized = dict(line, session_id=session_id, firmware=firmware)
@@ -307,8 +464,9 @@ class Handler(BaseHTTPRequestHandler):
                     continue
                 if line['seq'] != last_seq + 1:
                     return self.respond(409, {'error': 'Diagnostic sequence is out of order.'})
-                entry = dict(normalized, received_at_utc=stamp())
+                entry = dict(normalized, client_ip=target, received_at_utc=stamp())
                 additions.append(canonical(entry) + b'\n')
+                added_lines.append(line)
                 new_digests[line['seq']] = digest
                 last_seq = line['seq']
 
@@ -324,25 +482,46 @@ class Handler(BaseHTTPRequestHandler):
                 self.server.storage_bytes += byte_count
                 self.server.relapse_last_seq[session_id] = last_seq
                 known.update(new_digests)
+                self.server.observe_relapse(target, session_id, firmware, added_lines)
 
         return self.respond(200, {'ok': True, 'session_id': session_id, 'received': len(lines)})
 
     def hv_payload(self):
         return ROOT / 'private' / 'hv' / 'byepervisor_reborn.elf'
 
+    def verified_hv_payload(self):
+        payload = self.hv_payload().read_bytes()
+        if len(payload) != HV_PAYLOAD_BYTES or hashlib.sha256(payload).hexdigest() != HV_PAYLOAD_SHA256:
+            raise ValueError('HV payload does not match the pinned 13.60 build')
+        return payload
+
     def send_hv_payload(self, value):
         target = self.hv_client()
         if not target:
             return self.respond(403, {'error': 'The HV sender is available only from a PS5 on the local network.'})
-        if not isinstance(value, dict) or set(value) != {'firmware', 'elfldr_ready'} or value.get('firmware') != '13.60' or value.get('elfldr_ready') is not True:
-            return self.respond(400, {'error': 'Confirm the 13.60 firmware and that Relapse reports the ELF loader is listening on port 9021.'})
+        if (not isinstance(value, dict) or set(value) != {'firmware', 'elfldr_ready', 'relapse_session_id'}
+                or value.get('firmware') != '13.60' or value.get('elfldr_ready') is not True
+                or not isinstance(value.get('relapse_session_id'), str)):
+            return self.respond(400, {'error': 'A completed 13.60 Relapse session is required before HV delivery.'})
 
-        payload_path = self.hv_payload()
         try:
-            payload = payload_path.read_bytes()
-        except OSError:
-            return self.respond(503, {'error': 'The HV payload is not installed on the server.'})
+            payload = self.verified_hv_payload()
+        except (OSError, ValueError):
+            return self.respond(503, {'error': 'The server HV payload is missing or does not match the pinned 13.60 build.'})
         payload_sha256 = hashlib.sha256(payload).hexdigest()
+        if source_version() != self.server.version:
+            return self.respond(409, {'error': 'Hosting files changed after server startup. Finish deployment and restart the service before a new console session.'})
+
+        with self.server.lock:
+            run = self.server.current_relapse(target)
+            if not run or run['session_id'] != value['relapse_session_id']:
+                return self.respond(409, {'error': 'Relapse completion is missing, expired, or belongs to another console session.'})
+            if run['transfer_state'] or target in self.server.hv_inflight:
+                return self.respond(409, {'error': 'An HV delivery was already attempted. Check the console and restart it before a new chain.'})
+            # Consume readiness BEFORE connecting. An uncertain/partial send
+            # must never be automatically replayed into the same console state.
+            run['transfer_state'] = 'sending'
+            self.server.hv_inflight.add(target)
 
         try:
             with socket.create_connection((target, 9021), timeout=5) as console:
@@ -350,10 +529,18 @@ class Handler(BaseHTTPRequestHandler):
                 console.sendall(payload)
                 console.shutdown(socket.SHUT_WR)
         except OSError as exc:
-            print(f'[HV] send failed target={target} code={type(exc).__name__}', flush=True)
-            return self.respond(502, {'error': 'The ELF loader did not confirm a complete transfer. Read the console, then restart Relapse if needed. No retry was made.'})
+            with self.server.lock:
+                run['transfer_state'] = 'uncertain'
+            print(f'[HV] delivery uncertain target={target} session={run["session_id"]} code={type(exc).__name__}', flush=True)
+            return self.respond(502, {'error': 'HV delivery is uncertain. Check the console; restart it before a new chain. This session remains locked.', 'delivery_uncertain': True})
+        finally:
+            with self.server.lock:
+                self.server.hv_inflight.discard(target)
 
-        print(f'[HV] payload sent target={target} bytes={len(payload)} sha256={payload_sha256}', flush=True)
+        with self.server.lock:
+            run['transfer_state'] = 'sent'
+
+        print(f'[HV] payload sent target={target} session={run["session_id"]} bytes={len(payload)} sha256={payload_sha256}', flush=True)
         return self.respond(200, {'sent': True, 'firmware': '13.60', 'target': target, 'port': 9021,
                                   'bytes_sent': len(payload), 'sha256': payload_sha256,
                                   'hv_confirmed': False,
@@ -363,16 +550,23 @@ class Handler(BaseHTTPRequestHandler):
         if not self.origin_allowed():
             return self.respond(403, {'error': 'Host or origin rejected'})
         path = self.route()
-        static = {'/': ('web/index.html', 'text/html'), '/index.html': ('web/index.html', 'text/html'), '/app.js': ('web/app.js', 'application/javascript'), '/ui.css': ('web/ui.css', 'text/css'), '/experiment.js': ('experiments/baseline.js', 'application/javascript'), '/dashboard': ('dashboard/index.html', 'text/html'), '/dashboard.js': ('dashboard/dashboard.js', 'application/javascript')}
+        query = urlsplit(self.path).query
+        if path == '/api/dump/status':
+            from urllib.parse import parse_qs
+            return self.dump_status(parse_qs(query).get('session_id', [''])[0])
+        match = re.fullmatch(r'/api/dump/([a-f0-9-]{36})/([A-Za-z0-9_.-]+)', path)
+        if match:
+            return self.download_dump(match.group(1), match.group(2))
+        static = {'/': ('web/index.html', 'text/html'), '/index.html': ('web/index.html', 'text/html'), '/relapse/': ('web/index.html', 'text/html'), '/relapse': ('web/index.html', 'text/html'), '/research.css': ('web/research.css', 'text/css'), '/diagnostics': ('web/diagnostics.html', 'text/html'), '/app.js': ('web/app.js', 'application/javascript'), '/ui.css': ('web/ui.css', 'text/css'), '/experiment.js': ('experiments/baseline.js', 'application/javascript'), '/dashboard': ('dashboard/index.html', 'text/html'), '/dashboard.js': ('dashboard/dashboard.js', 'application/javascript')}
         static['/phase2.js'] = ('experiments/phase2.js', 'application/javascript')
-        static['/phase2'] = ('web/index.html', 'text/html')
-        static['/context'] = ('web/index.html', 'text/html')
+        static['/phase2'] = ('web/diagnostics.html', 'text/html')
+        static['/context'] = ('web/diagnostics.html', 'text/html')
         static['/context.js'] = ('experiments/context.js', 'application/javascript')
         static['/context-worker.js'] = ('web/context-worker.js', 'application/javascript')
-        static['/messaging'] = ('web/index.html', 'text/html')
+        static['/messaging'] = ('web/diagnostics.html', 'text/html')
         static['/messaging.js'] = ('experiments/messaging.js', 'application/javascript')
         static['/messaging-worker.js'] = ('web/messaging-worker.js', 'application/javascript')
-        static['/ssvprobe'] = ('web/index.html', 'text/html')
+        static['/ssvprobe'] = ('web/diagnostics.html', 'text/html')
         static['/ssvprobe.js'] = ('experiments/ssvprobe.js', 'application/javascript')
         static['/transformstream-feature'] = ('web/transformstream-feature.html', 'text/html')
         static['/transformstream-feature.js'] = ('web/transformstream-feature.js', 'application/javascript')
@@ -396,13 +590,19 @@ class Handler(BaseHTTPRequestHandler):
             target = self.hv_client(require_origin=False)
             if not target:
                 return self.respond(403, {'error': 'The HV sender is available only from a PS5 on the local network.'})
-            payload_path = self.hv_payload()
             try:
-                payload = payload_path.read_bytes()
-            except OSError:
-                return self.respond(503, {'error': 'The HV payload is not installed on the server.'})
+                payload = self.verified_hv_payload()
+            except (OSError, ValueError):
+                return self.respond(503, {'error': 'The server HV payload is missing or does not match the pinned 13.60 build.'})
+            with self.server.lock:
+                run = self.server.current_relapse(target)
+                ready = bool(run and not run['transfer_state'] and target not in self.server.hv_inflight)
+                session_id = run['session_id'] if ready else None
+                transfer_state = run['transfer_state'] if run else None
             return self.respond(200, {'eligible': True, 'firmware': '13.60', 'target': target,
                                       'payload_bytes': len(payload), 'sha256': hashlib.sha256(payload).hexdigest(),
+                                      'upstream_commit': HV_UPSTREAM_COMMIT, 'relapse_ready': ready,
+                                      'relapse_session_id': session_id, 'transfer_state': transfer_state,
                                       'loader_port': 9021, 'hv_confirmed': False})
         if path == '/api/config':
             return self.respond(200, {'experiment': 'browser-baseline', 'version': self.server.version, 'parameters': {'allocation_bytes': 1048576, 'timing_samples': 5, 'request_timeout_ms': 5000}})
@@ -454,8 +654,17 @@ class Handler(BaseHTTPRequestHandler):
             self.close_connection = True
             return self.respond(429, {'error': 'Request limit reached'})
         try:
-            value = self.read_json()
             path = self.route()
+            if path == '/dump':
+                try:
+                    return self.receive_dump()
+                except OverflowError as exc:
+                    self.close_connection = True
+                    return self.respond(413, {'error': str(exc)})
+                except (ValueError, TypeError, UnicodeDecodeError, RecursionError) as exc:
+                    self.close_connection = True
+                    return self.respond(400, {'error': str(exc)})
+            value = self.read_json()
             if path == '/api/hv/send':
                 return self.send_hv_payload(value)
             if path == '/api/relapse/diagnostics':

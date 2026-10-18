@@ -166,7 +166,7 @@ async function prepareRop(p) {
     p.write1(waddr, 0x0);
   }
 
-  const worker = new Worker("./src/utils/rop_slave.js");
+  const worker = new Worker(new URL("src/utils/rop_slave.js", relapseAssetBase).href);
 
   async function waitForWorker() {
     return new Promise((resolve, reject) => {
@@ -272,12 +272,14 @@ async function main(userlandRW) {
   } else {
     log("kernel chain complete: root and sandbox escape are active", "info");
   }
+  return result;
 }
 
+const relapseAssetBase = new URL("../", document.currentScript.src);
 window.__relapseOffsetsReady = new Promise((resolve, reject) => {
   const fwScript = document.createElement("script");
   fwScript.onload = () => resolve();
   fwScript.onerror = () => reject(new Error(`Failed to load ${window.fw_str} firmware offsets`));
-  fwScript.src = `offsets/${window.fw_str}.js?v=` + Date.now();
+  fwScript.src = new URL(`offsets/${window.fw_str}.js?v=${Date.now()}`, relapseAssetBase).href;
   document.head.appendChild(fwScript);
 });

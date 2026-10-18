@@ -4,6 +4,9 @@ import { installWindowP } from "./utils/mem.js";
 const output = document.getElementById("console");
 
 function writeLog(message, type = "log", replace = false) {
+  if (/^cleanup:/i.test(String(message)) && !/^cleanup: repairing aio groups$/i.test(String(message))) {
+    window.__relapseCleanupFailed = true;
+  }
   let line = replace ? output.lastElementChild : null;
   if (!line) {
     line = document.createElement("div");
@@ -49,7 +52,7 @@ function getWebKitBase() {
   throw new Error("WebKit base not found");
 }
 
-async function run() {
+export async function runRelapse() {
   const rejection = window.firmware.rejection();
   if (rejection)
     throw new Error(rejection);
@@ -60,7 +63,5 @@ async function run() {
   writeLog(`WebKit base: 0x${getWebKitBase().toString(16)}`, "info");
 
   await import("./relapse_exploit.js");
-  await main(primitive);
+  return await main(primitive);
 }
-
-run().catch((error) => writeLog(error instanceof Error ? error.message : String(error), "error"));

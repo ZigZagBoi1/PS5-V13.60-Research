@@ -9,7 +9,7 @@
   const pending = [];
   const maxLines = 500;
   let sequence = 0;
-  let sending = false;
+  let inFlight = null;
   let timer = null;
   let retryTimer = null;
   let lastFailure = false;
@@ -50,9 +50,14 @@
     }, delay);
   }
 
-  async function flush() {
-    if (sending || pending.length === 0) return;
-    sending = true;
+  function flush() {
+    if (inFlight) return inFlight;
+    if (pending.length === 0) return Promise.resolve(true);
+    inFlight = sendBatch().finally(() => { inFlight = null; });
+    return inFlight;
+  }
+
+  async function sendBatch() {
     const batch = pending.splice(0, 20);
     const body = JSON.stringify({
       session_id: sessionId,
@@ -60,6 +65,8 @@
       lines: batch,
     });
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 5000);
     try {
       const response = await fetch(endpoint, {
         method: "POST",
@@ -67,10 +74,16 @@
         headers: { "Content-Type": "application/json" },
         body,
         keepalive: true,
+        signal: controller.signal,
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const ack = await response.json();
+      if (ack.ok !== true || ack.session_id !== sessionId || ack.received !== batch.length) {
+        throw new Error("Invalid diagnostics acknowledgment");
+      }
       lastFailure = false;
       setStatus("Diagnostics are reaching this site’s server. Memory addresses are removed.");
+      return true;
     } catch (error) {
       pending.unshift(...batch);
       lastFailure = true;
@@ -81,14 +94,23 @@
           void flush();
         }, 5000);
       }
+      return false;
     } finally {
-      sending = false;
+      clearTimeout(timeout);
       if (pending.length > 0 && !lastFailure) schedule(100);
     }
   }
 
+  async function drain() {
+    if (timer !== null) { clearTimeout(timer); timer = null; }
+    while (pending.length > 0 || inFlight) {
+      if (!(await flush())) return false;
+    }
+    return true;
+  }
+
   function log(message, level = "log") {
-    if (sequence >= maxLines) return;
+    if (sequence >= maxLines) return false;
     sequence += 1;
     pending.push({
       seq: sequence,
@@ -105,9 +127,10 @@
     } else {
       schedule();
     }
+    return true;
   }
 
-  window.__relapseDiagnostics = { log, flush };
+  window.__relapseDiagnostics = { sessionId, log, flush, drain };
   window.addEventListener("error", (event) => {
     if (event.target && event.target !== window) {
       const resource = event.target.src || event.target.href || "resource";
