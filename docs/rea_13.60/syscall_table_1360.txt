@@ -1,0 +1,336 @@
+# PS5 13.60 Syscall Table
+# Table VA: 0xffffffff9f25e5c0, stride=48, nosys=0xffffffff9e655760
+# 314 implemented syscalls out of 700 entries
+
+   1  narg=1  flags=0x0000  handler=0xffffffff9e6557f0  # exit
+   2  narg=0  flags=0x0000  handler=0xffffffff9e6557f8  # fork
+   3  narg=3  flags=0x0000  handler=0xffffffff9e655800  # read
+   4  narg=3  flags=0x0000  handler=0xffffffff9e655808  # write
+   5  narg=3  flags=0x0000  handler=0xffffffff9e655810  # open
+   6  narg=1  flags=0x0000  handler=0xffffffff9e655818  # close
+   7  narg=4  flags=0x0000  handler=0xffffffff9e655820  # wait4
+  10  narg=1  flags=0x0000  handler=0xffffffff9e655828  # unlink
+  12  narg=1  flags=0x0000  handler=0xffffffff9e655830  # chdir
+  15  narg=2  flags=0x0000  handler=0xffffffff9e655838  # chmod
+  20  narg=0  flags=0x0000  handler=0xffffffff9e655308  # getpid
+  23  narg=1  flags=0x0000  handler=0xffffffff9e655368  # setuid
+  24  narg=0  flags=0x0000  handler=0xffffffff9e655330  # getuid
+  25  narg=0  flags=0x0000  handler=0xffffffff9e655338  # geteuid
+  27  narg=3  flags=0x0000  handler=0xffffffff9e655840  # recvmsg
+  28  narg=3  flags=0x0000  handler=0xffffffff9e655848  # sendmsg
+  29  narg=6  flags=0x0000  handler=0xffffffff9e655850  # recvfrom
+  30  narg=3  flags=0x0000  handler=0xffffffff9e655858  # accept
+  31  narg=3  flags=0x0000  handler=0xffffffff9e655860  # getpeername
+  32  narg=3  flags=0x0000  handler=0xffffffff9e655868  # getsockname
+  33  narg=2  flags=0x0000  handler=0xffffffff9e655870  # access
+  34  narg=2  flags=0x0000  handler=0xffffffff9e655878  # chflags
+  35  narg=2  flags=0x0000  handler=0xffffffff9e655880  # fchflags
+  36  narg=0  flags=0x0000  handler=0xffffffff9e655888  # sync
+  37  narg=2  flags=0x0000  handler=0xffffffff9e655890  # kill
+  39  narg=0  flags=0x0000  handler=0xffffffff9e655310  # getppid
+  41  narg=1  flags=0x0000  handler=0xffffffff9e655898  # dup
+  42  narg=0  flags=0x0000  handler=0xffffffff9e6558a0  # pipe
+  43  narg=0  flags=0x0000  handler=0xffffffff9e655348  # getegid
+  44  narg=4  flags=0x0000  handler=0xffffffff9e6558a8  # profil
+  47  narg=0  flags=0x0000  handler=0xffffffff9e655340  # getgid
+  49  narg=2  flags=0x0000  handler=0xffffffff9e6553d0  # getlogin
+  50  narg=1  flags=0x0000  handler=0xffffffff9e6553d8  # setlogin
+  53  narg=2  flags=0x0000  handler=0xffffffff9e6558b0  # sigaltstack
+  54  narg=3  flags=0x0000  handler=0xffffffff9e6558b8  # ioctl
+  55  narg=1  flags=0x0000  handler=0xffffffff9e6558c0  # reboot
+  56  narg=1  flags=0x0000  handler=0xffffffff9e6558c8  # revoke
+  59  narg=3  flags=0x0000  handler=0xffffffff9e6558d0  # execve
+  65  narg=3  flags=0x0000  handler=0xffffffff9e6558d8  # msync
+  73  narg=2  flags=0x0000  handler=0xffffffff9e6558e0  # munmap
+  74  narg=3  flags=0x0000  handler=0xffffffff9e6558e8  # mprotect
+  75  narg=3  flags=0x0000  handler=0xffffffff9e6558f0  # madvise
+  78  narg=3  flags=0x0000  handler=0xffffffff9e6558f8  # mincore
+  79  narg=2  flags=0x0000  handler=0xffffffff9e655350  # getgroups
+  80  narg=2  flags=0x0000  handler=0xffffffff9e655388  # setgroups
+  83  narg=3  flags=0x0000  handler=0xffffffff9e655900  # setitimer
+  86  narg=2  flags=0x0000  handler=0xffffffff9e655908  # getitimer
+  89  narg=0  flags=0x0000  handler=0xffffffff9e655910  # getdtablesize
+  90  narg=2  flags=0x0000  handler=0xffffffff9e655918  # dup2
+  92  narg=3  flags=0x0000  handler=0xffffffff9e655920  # fcntl
+  93  narg=5  flags=0x0000  handler=0xffffffff9e655928  # select
+  95  narg=1  flags=0x0000  handler=0xffffffff9e655930  # fsync
+  96  narg=3  flags=0x0000  handler=0xffffffff9e655938  # setpriority
+  97  narg=3  flags=0x0000  handler=0xffffffff9e655940  # socket
+  98  narg=3  flags=0x0000  handler=0xffffffff9e655948  # connect
+  99  narg=4  flags=0x0000  handler=0xffffffff9e655950  # accept
+ 100  narg=2  flags=0x0000  handler=0xffffffff9e655958  # getpriority
+ 101  narg=2  flags=0x0000  handler=0xffffffff9e655960  # UNUSED
+ 102  narg=4  flags=0x0000  handler=0xffffffff9e655968  # UNUSED
+ 104  narg=3  flags=0x0000  handler=0xffffffff9e655970  # bind
+ 105  narg=5  flags=0x0000  handler=0xffffffff9e655978  # setsockopt
+ 106  narg=2  flags=0x0000  handler=0xffffffff9e655980  # listen
+ 113  narg=4  flags=0x0000  handler=0xffffffff9e655988  # sendto
+ 114  narg=1  flags=0x0000  handler=0xffffffff9e655990  # shutdown
+ 116  narg=2  flags=0x0000  handler=0xffffffff9e655998  # gettimeofday
+ 117  narg=2  flags=0x0000  handler=0xffffffff9e6559a0  # getrusage
+ 118  narg=5  flags=0x0000  handler=0xffffffff9e6559a8  # getsockopt
+ 120  narg=3  flags=0x0000  handler=0xffffffff9e6559b0  # readv
+ 121  narg=3  flags=0x0000  handler=0xffffffff9e6559b8  # writev
+ 122  narg=2  flags=0x0000  handler=0xffffffff9e6559c0  # settimeofday
+ 124  narg=2  flags=0x0000  handler=0xffffffff9e6559c8  # flock
+ 125  narg=3  flags=0x0000  handler=0xffffffff9e6559d0  # mkfifo
+ 126  narg=2  flags=0x0000  handler=0xffffffff9e655390  # sendto
+ 127  narg=2  flags=0x0000  handler=0xffffffff9e655398  # fchdir
+ 128  narg=2  flags=0x0000  handler=0xffffffff9e6559d8  # fchmod
+ 131  narg=2  flags=0x0000  handler=0xffffffff9e6559e0  # setreuid
+ 133  narg=6  flags=0x0000  handler=0xffffffff9e6559e8  # sendmsg
+ 134  narg=2  flags=0x0000  handler=0xffffffff9e6559f0  # recvmsg
+ 135  narg=4  flags=0x0000  handler=0xffffffff9e6559f8  # 
+ 136  narg=2  flags=0x0000  handler=0xffffffff9e655a00  # 
+ 137  narg=1  flags=0x0000  handler=0xffffffff9e655a08  # 
+ 138  narg=2  flags=0x0000  handler=0xffffffff9e655a10  # 
+ 140  narg=2  flags=0x0000  handler=0xffffffff9e655538  # 
+ 141  narg=1  flags=0x0000  handler=0xffffffff9e6554f0  # 
+ 147  narg=0  flags=0x0000  handler=0xffffffff9e655358  # setsid
+ 165  narg=2  flags=0x0000  handler=0xffffffff9e655a18  # sysarch
+ 182  narg=1  flags=0x0000  handler=0xffffffff9e655380  # 
+ 183  narg=1  flags=0x0000  handler=0xffffffff9e655370  # 
+ 188  narg=2  flags=0x0000  handler=0xffffffff9e655a20  # stat
+ 189  narg=2  flags=0x0000  handler=0xffffffff9e655a28  # fstat
+ 190  narg=2  flags=0x0000  handler=0xffffffff9e655a30  # lstat
+ 191  narg=2  flags=0x0000  handler=0xffffffff9e655a38  # pathconf
+ 192  narg=2  flags=0x0000  handler=0xffffffff9e655a40  # fpathconf
+ 194  narg=2  flags=0x0000  handler=0xffffffff9e655a48  # getrlimit
+ 195  narg=2  flags=0x0000  handler=0xffffffff9e655a50  # setrlimit
+ 196  narg=4  flags=0x0000  handler=0xffffffff9e655a58  # getdirentries
+ 202  narg=6  flags=0x0000  handler=0xffffffff9e655a60  # sysctl
+ 203  narg=2  flags=0x0000  handler=0xffffffff9e655a68  # mlock
+ 204  narg=2  flags=0x0000  handler=0xffffffff9e655a70  # munlock
+ 206  narg=2  flags=0x0000  handler=0xffffffff9e655a78  # futimes
+ 209  narg=3  flags=0x0000  handler=0xffffffff9e655a80  # 
+ 210  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 211  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 212  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 213  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 214  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 215  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 216  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 217  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 218  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 219  narg=1  flags=0x0000  handler=0xffffffff9e655a88  # 
+ 220  narg=0  flags=0x0000  handler=0xffffffff9e655a90  # semget
+ 224  narg=0  flags=0x0000  handler=0xffffffff9e655a90  # msgrcv
+ 229  narg=0  flags=0x0000  handler=0xffffffff9e655a90  # 
+ 232  narg=2  flags=0x0000  handler=0xffffffff9e655a98  # clock_gettime
+ 233  narg=2  flags=0x0000  handler=0xffffffff9e655aa0  # clock_settime
+ 234  narg=2  flags=0x0000  handler=0xffffffff9e655aa8  # clock_getres
+ 235  narg=3  flags=0x0000  handler=0xffffffff9e655ab0  # 
+ 236  narg=1  flags=0x0000  handler=0xffffffff9e655ab8  # 
+ 237  narg=4  flags=0x0000  handler=0xffffffff9e655ac0  # 
+ 238  narg=2  flags=0x0000  handler=0xffffffff9e655ac8  # 
+ 239  narg=1  flags=0x0000  handler=0xffffffff9e655ad0  # 
+ 240  narg=2  flags=0x0000  handler=0xffffffff9e655ad8  # nanosleep
+ 251  narg=1  flags=0x0000  handler=0xffffffff9e655ae0  # 
+ 253  narg=0  flags=0x0000  handler=0xffffffff9e6553c0  # issetugid
+ 272  narg=3  flags=0x0000  handler=0xffffffff9e655ae8  # getdents
+ 289  narg=4  flags=0x0000  handler=0xffffffff9e655af0  # preadv
+ 290  narg=4  flags=0x0000  handler=0xffffffff9e655af8  # pwritev
+ 310  narg=1  flags=0x0000  handler=0xffffffff9e655328  # 
+ 315  narg=3  flags=0x0000  handler=0xffffffff9e655b00  # 
+ 324  narg=1  flags=0x0000  handler=0xffffffff9e655b08  # __sysctl
+ 325  narg=0  flags=0x0000  handler=0xffffffff9e655b10  # 
+ 327  narg=2  flags=0x0000  handler=0xffffffff9e655b18  # 
+ 328  narg=2  flags=0x0000  handler=0xffffffff9e655b20  # 
+ 329  narg=3  flags=0x0000  handler=0xffffffff9e655b28  # 
+ 330  narg=1  flags=0x0000  handler=0xffffffff9e655b30  # 
+ 331  narg=0  flags=0x0000  handler=0xffffffff9e655b38  # 
+ 332  narg=1  flags=0x0000  handler=0xffffffff9e655b40  # 
+ 333  narg=1  flags=0x0000  handler=0xffffffff9e655b48  # 
+ 334  narg=2  flags=0x0000  handler=0xffffffff9e655b50  # 
+ 340  narg=3  flags=0x0000  handler=0xffffffff9e655b58  # sigaction
+ 341  narg=1  flags=0x0000  handler=0xffffffff9e655b60  # sigpending
+ 343  narg=1  flags=0x0000  handler=0xffffffff9e655b68  # 
+ 345  narg=3  flags=0x0000  handler=0xffffffff9e655b70  # sigtimedwait
+ 346  narg=2  flags=0x0000  handler=0xffffffff9e655b78  # sigwaitinfo
+ 362  narg=0  flags=0x0000  handler=0xffffffff9e6554e8  # 
+ 363  narg=6  flags=0x0000  handler=0xffffffff9e6554f8  # kqueue
+ 379  narg=4  flags=0x0000  handler=0xffffffff9e655b80  # 
+ 392  narg=2  flags=0x0000  handler=0xffffffff9e6557e8  # sendfile
+ 393  narg=7  flags=0x0000  handler=0xffffffff9e655b88  # mac_syscall
+ 397  narg=2  flags=0x0000  handler=0xffffffff9e655b90  # fhstatfs
+ 400  narg=1  flags=0x0000  handler=0xffffffff9e655b98  # 
+ 401  narg=1  flags=0x0000  handler=0xffffffff9e655ba0  # 
+ 402  narg=1  flags=0x0000  handler=0xffffffff9e655ba8  # 
+ 403  narg=1  flags=0x0000  handler=0xffffffff9e655bb0  # 
+ 404  narg=2  flags=0x0000  handler=0xffffffff9e655bb8  # 
+ 405  narg=5  flags=0x0000  handler=0xffffffff9e655bc0  # 
+ 406  narg=1  flags=0x0000  handler=0xffffffff9e655bc8  # 
+ 407  narg=2  flags=0x0000  handler=0xffffffff9e655bd0  # 
+ 408  narg=1  flags=0x0000  handler=0xffffffff9e655bd8  # 
+ 416  narg=3  flags=0x0000  handler=0xffffffff9e655be0  # sigaction
+ 417  narg=1  flags=0x0000  handler=0xffffffff9e655be8  # sigreturn
+ 421  narg=1  flags=0x0000  handler=0xffffffff9e655bf0  # 
+ 422  narg=1  flags=0x0000  handler=0xffffffff9e655bf8  # 
+ 423  narg=2  flags=0x0000  handler=0xffffffff9e655c00  # 
+ 429  narg=2  flags=0x0000  handler=0xffffffff9e655c08  # 
+ 430  narg=3  flags=0x0000  handler=0xffffffff9e655c10  # 
+ 431  narg=1  flags=0x0000  handler=0xffffffff9e655c18  # 
+ 432  narg=1  flags=0x0000  handler=0xffffffff9e655c20  # thr_new
+ 433  narg=2  flags=0x0000  handler=0xffffffff9e655c28  # thr_exit
+ 441  narg=2  flags=0x0000  handler=0xffffffff9e655c30  # jail_attach
+ 442  narg=1  flags=0x0000  handler=0xffffffff9e655c38  # 
+ 443  narg=1  flags=0x0000  handler=0xffffffff9e655c40  # 
+ 444  narg=2  flags=0x0000  handler=0xffffffff9e655c48  # 
+ 454  narg=6  flags=0x0000  handler=0xffffffff9e655600  # cap_rights_limit
+ 455  narg=2  flags=0x0000  handler=0xffffffff9e655c50  # 
+ 456  narg=3  flags=0x0000  handler=0xffffffff9e655c58  # bindat
+ 464  narg=2  flags=0x0000  handler=0xffffffff9e655c60  # ppoll
+ 466  narg=3  flags=0x0000  handler=0xffffffff9e655c68  # utimensat
+ 475  narg=4  flags=0x0000  handler=0xffffffff9e655c70  # aio_writev
+ 476  narg=4  flags=0x0000  handler=0xffffffff9e655c78  # aio_readv
+ 477  narg=6  flags=0x0000  handler=0xffffffff9e655c80  # 
+ 478  narg=3  flags=0x0000  handler=0xffffffff9e655c88  # 
+ 479  narg=2  flags=0x0000  handler=0xffffffff9e655c90  # 
+ 480  narg=2  flags=0x0000  handler=0xffffffff9e655c98  # 
+ 481  narg=3  flags=0x0000  handler=0xffffffff9e655ca0  # 
+ 482  narg=3  flags=0x0000  handler=0xffffffff9e655ca8  # 
+ 483  narg=1  flags=0x0000  handler=0xffffffff9e655cb0  # 
+ 486  narg=4  flags=0x0000  handler=0xffffffff9e655cb8  # 
+ 487  narg=5  flags=0x0000  handler=0xffffffff9e655cc0  # 
+ 488  narg=5  flags=0x0000  handler=0xffffffff9e655cc8  # 
+ 499  narg=4  flags=0x0000  handler=0xffffffff9e655cd0  # 
+ 515  narg=3  flags=0x0000  handler=0xffffffff9e655cd8  # ORBIS_CUSTOM_515
+ 522  narg=6  flags=0x0000  handler=0xffffffff9e655ce0  # ORBIS_CUSTOM_522
+ 532  narg=5  flags=0x0000  handler=0xffffffff9e655ce8  # ORBIS_CUSTOM_532
+ 533  narg=3  flags=0x0000  handler=0xffffffff9e655cf0  # ORBIS_CUSTOM_533
+ 534  narg=2  flags=0x0000  handler=0xffffffff9e655cf8  # ORBIS_CUSTOM_534
+ 535  narg=4  flags=0x0000  handler=0xffffffff9e655d00  # ORBIS_CUSTOM_535
+ 536  narg=3  flags=0x0000  handler=0xffffffff9e655d08  # ORBIS_CUSTOM_536
+ 538  narg=3  flags=0x0000  handler=0xffffffff9e655d10  # ORBIS_CUSTOM_538
+ 539  narg=1  flags=0x0000  handler=0xffffffff9e655d18  # ORBIS_CUSTOM_539
+ 540  narg=1  flags=0x0000  handler=0xffffffff9e655d20  # ORBIS_CUSTOM_540
+ 541  narg=1  flags=0x0000  handler=0xffffffff9e655d28  # ORBIS_CUSTOM_541
+ 542  narg=5  flags=0x0000  handler=0xffffffff9e655d30  # ORBIS_CUSTOM_542
+ 543  narg=4  flags=0x0000  handler=0xffffffff9e655d38  # ORBIS_CUSTOM_543
+ 544  narg=2  flags=0x0000  handler=0xffffffff9e655d40  # ORBIS_CUSTOM_544
+ 545  narg=2  flags=0x0000  handler=0xffffffff9e655d48  # ORBIS_CUSTOM_545
+ 546  narg=3  flags=0x0000  handler=0xffffffff9e655d50  # ORBIS_CUSTOM_546
+ 547  narg=2  flags=0x0000  handler=0xffffffff9e655d58  # ORBIS_CUSTOM_547
+ 548  narg=5  flags=0x0000  handler=0xffffffff9e655d60  # ORBIS_CUSTOM_548
+ 549  narg=4  flags=0x0000  handler=0xffffffff9e655d68  # ORBIS_CUSTOM_549
+ 550  narg=1  flags=0x0000  handler=0xffffffff9e655d70  # ORBIS_CUSTOM_550
+ 551  narg=1  flags=0x0000  handler=0xffffffff9e655d78  # ORBIS_CUSTOM_551
+ 552  narg=1  flags=0x0000  handler=0xffffffff9e655d80  # ORBIS_CUSTOM_552
+ 553  narg=3  flags=0x0000  handler=0xffffffff9e655d88  # ORBIS_CUSTOM_553
+ 554  narg=2  flags=0x0000  handler=0xffffffff9e655d90  # ORBIS_CUSTOM_554
+ 555  narg=2  flags=0x0000  handler=0xffffffff9e655d98  # ORBIS_CUSTOM_555
+ 556  narg=3  flags=0x0000  handler=0xffffffff9e655da0  # ORBIS_CUSTOM_556
+ 557  narg=3  flags=0x0000  handler=0xffffffff9e655da8  # ORBIS_CUSTOM_557
+ 558  narg=2  flags=0x0000  handler=0xffffffff9e655db0  # ORBIS_CUSTOM_558
+ 559  narg=1  flags=0x0000  handler=0xffffffff9e655db8  # ORBIS_CUSTOM_559
+ 560  narg=1  flags=0x0000  handler=0xffffffff9e655dc0  # ORBIS_CUSTOM_560
+ 563  narg=1  flags=0x0000  handler=0xffffffff9e655dc8  # ORBIS_CUSTOM_563
+ 564  narg=1  flags=0x0000  handler=0xffffffff9e655dd0  # ORBIS_CUSTOM_564
+ 565  narg=3  flags=0x0000  handler=0xffffffff9e655dd8  # ORBIS_CUSTOM_565
+ 566  narg=3  flags=0x0000  handler=0xffffffff9e655de0  # ORBIS_CUSTOM_566
+ 567  narg=3  flags=0x0000  handler=0xffffffff9e655de8  # ORBIS_CUSTOM_567
+ 572  narg=4  flags=0x0000  handler=0xffffffff9e655df0  # ORBIS_CUSTOM_572
+ 585  narg=0  flags=0x0000  handler=0xffffffff9e655df8  # ORBIS_CUSTOM_585
+ 586  narg=1  flags=0x0000  handler=0xffffffff9e655790  # ORBIS_CUSTOM_586
+ 587  narg=2  flags=0x0000  handler=0xffffffff9e655e00  # ORBIS_CUSTOM_587
+ 588  narg=3  flags=0x0000  handler=0xffffffff9e655e08  # ORBIS_CUSTOM_588
+ 591  narg=3  flags=0x0000  handler=0xffffffff9e655570  # ORBIS_CUSTOM_591
+ 592  narg=3  flags=0x0000  handler=0xffffffff9e655578  # ORBIS_CUSTOM_592
+ 593  narg=2  flags=0x0000  handler=0xffffffff9e655588  # ORBIS_CUSTOM_593
+ 594  narg=4  flags=0x0000  handler=0xffffffff9e655560  # ORBIS_CUSTOM_594
+ 595  narg=3  flags=0x0000  handler=0xffffffff9e655568  # ORBIS_CUSTOM_595
+ 596  narg=0  flags=0x0000  handler=0xffffffff9e6555b0  # ORBIS_CUSTOM_596
+ 598  narg=2  flags=0x0000  handler=0xffffffff9e6555d0  # ORBIS_CUSTOM_598
+ 599  narg=0  flags=0x0000  handler=0xffffffff9e6555d8  # ORBIS_CUSTOM_599
+ 600  narg=1  flags=0x0000  handler=0xffffffff9e655e10  # ORBIS_CUSTOM_600
+ 601  narg=3  flags=0x0000  handler=0xffffffff9e655e18  # ORBIS_CUSTOM_601
+ 602  narg=3  flags=0x0000  handler=0xffffffff9e655e20  # ORBIS_CUSTOM_602
+ 603  narg=2  flags=0x0000  handler=0xffffffff9e655e28  # ORBIS_CUSTOM_603
+ 604  narg=5  flags=0x0000  handler=0xffffffff9e655e30  # ORBIS_CUSTOM_604
+ 605  narg=1  flags=0x0000  handler=0xffffffff9e655e38  # ORBIS_CUSTOM_605
+ 606  narg=0  flags=0x0000  handler=0xffffffff9e655e40  # ORBIS_CUSTOM_606
+ 607  narg=2  flags=0x0000  handler=0xffffffff9e655e48  # ORBIS_CUSTOM_607
+ 608  narg=3  flags=0x0000  handler=0xffffffff9e655598  # ORBIS_CUSTOM_608
+ 610  narg=1  flags=0x0000  handler=0xffffffff9e655e50  # ORBIS_CUSTOM_610
+ 611  narg=3  flags=0x0000  handler=0xffffffff9e655e58  # ORBIS_CUSTOM_611
+ 612  narg=1  flags=0x0000  handler=0xffffffff9e6555e0  # ORBIS_CUSTOM_612
+ 613  narg=3  flags=0x0000  handler=0xffffffff9e655e60  # ORBIS_CUSTOM_613
+ 615  narg=3  flags=0x0000  handler=0xffffffff9e655e68  # ORBIS_CUSTOM_615
+ 616  narg=2  flags=0x0000  handler=0xffffffff9e655e70  # ORBIS_CUSTOM_616
+ 617  narg=1  flags=0x0000  handler=0xffffffff9e655e78  # ORBIS_CUSTOM_617
+ 618  narg=3  flags=0x0000  handler=0xffffffff9e655e80  # ORBIS_CUSTOM_618
+ 619  narg=5  flags=0x0000  handler=0xffffffff9e655e88  # ORBIS_CUSTOM_619
+ 620  narg=0  flags=0x0000  handler=0xffffffff9e655e90  # ORBIS_CUSTOM_620
+ 622  narg=6  flags=0x0000  handler=0xffffffff9e655e98  # ORBIS_CUSTOM_622
+ 623  narg=1  flags=0x0000  handler=0xffffffff9e655ea0  # ORBIS_CUSTOM_623
+ 624  narg=0  flags=0x0000  handler=0xffffffff9e655ea8  # ORBIS_CUSTOM_624
+ 625  narg=4  flags=0x0000  handler=0xffffffff9e655eb0  # ORBIS_CUSTOM_625
+ 626  narg=5  flags=0x0000  handler=0xffffffff9e655eb8  # ORBIS_CUSTOM_626
+ 627  narg=2  flags=0x0000  handler=0xffffffff9e655ec0  # ORBIS_CUSTOM_627
+ 628  narg=6  flags=0x0000  handler=0xffffffff9e655ec8  # ORBIS_CUSTOM_628
+ 629  narg=4  flags=0x0000  handler=0xffffffff9e655ed0  # ORBIS_CUSTOM_629
+ 630  narg=1  flags=0x0000  handler=0xffffffff9e655ed8  # ORBIS_CUSTOM_630
+ 632  narg=1  flags=0x0000  handler=0xffffffff9e655ee0  # ORBIS_CUSTOM_632
+ 633  narg=1  flags=0x0000  handler=0xffffffff9e655ee8  # ORBIS_CUSTOM_633
+ 634  narg=2  flags=0x0000  handler=0xffffffff9e655ef0  # ORBIS_CUSTOM_634
+ 635  narg=2  flags=0x0000  handler=0xffffffff9e655ef8  # ORBIS_CUSTOM_635
+ 636  narg=2  flags=0x0000  handler=0xffffffff9e655f00  # ORBIS_CUSTOM_636
+ 637  narg=2  flags=0x0000  handler=0xffffffff9e655f08  # ORBIS_CUSTOM_637
+ 638  narg=4  flags=0x0000  handler=0xffffffff9e655f10  # ORBIS_CUSTOM_638
+ 639  narg=5  flags=0x0000  handler=0xffffffff9e655f18  # ORBIS_CUSTOM_639
+ 640  narg=8  flags=0x0000  handler=0xffffffff9e655f20  # ORBIS_CUSTOM_640
+ 641  narg=2  flags=0x0000  handler=0xffffffff9e655f28  # ORBIS_CUSTOM_641
+ 642  narg=4  flags=0x0000  handler=0xffffffff9e655f30  # ORBIS_CUSTOM_642
+ 643  narg=1  flags=0x0000  handler=0xffffffff9e655f38  # ORBIS_CUSTOM_643
+ 646  narg=1  flags=0x0000  handler=0xffffffff9e655f40  # ORBIS_CUSTOM_646
+ 647  narg=1  flags=0x0000  handler=0xffffffff9e655f48  # ORBIS_CUSTOM_647
+ 648  narg=1  flags=0x0000  handler=0xffffffff9e655f50  # ORBIS_CUSTOM_648
+ 649  narg=3  flags=0x0000  handler=0xffffffff9e6555e8  # ORBIS_CUSTOM_649
+ 652  narg=2  flags=0x0000  handler=0xffffffff9e655f58  # ORBIS_CUSTOM_652
+ 653  narg=1  flags=0x0000  handler=0xffffffff9e655f60  # ORBIS_CUSTOM_653
+ 654  narg=5  flags=0x0000  handler=0xffffffff9e655f68  # ORBIS_CUSTOM_654
+ 655  narg=3  flags=0x0000  handler=0xffffffff9e655f70  # ORBIS_CUSTOM_655
+ 656  narg=2  flags=0x0000  handler=0xffffffff9e6555a0  # ORBIS_CUSTOM_656
+ 657  narg=4  flags=0x0000  handler=0xffffffff9e655f78  # ORBIS_CUSTOM_657
+ 658  narg=1  flags=0x0000  handler=0xffffffff9e655f80  # ORBIS_CUSTOM_658
+ 659  narg=3  flags=0x0000  handler=0xffffffff9e655580  # ORBIS_CUSTOM_659
+ 660  narg=2  flags=0x0000  handler=0xffffffff9e655590  # ORBIS_CUSTOM_660
+ 661  narg=4  flags=0x0000  handler=0xffffffff9e655710  # ORBIS_CUSTOM_661
+ 662  narg=3  flags=0x0000  handler=0xffffffff9e655718  # ORBIS_CUSTOM_662
+ 663  narg=5  flags=0x0000  handler=0xffffffff9e655720  # ORBIS_CUSTOM_663
+ 664  narg=3  flags=0x0000  handler=0xffffffff9e655728  # ORBIS_CUSTOM_664
+ 665  narg=2  flags=0x0000  handler=0xffffffff9e655730  # ORBIS_CUSTOM_665
+ 666  narg=3  flags=0x0000  handler=0xffffffff9e655738  # ORBIS_CUSTOM_666
+ 667  narg=2  flags=0x0000  handler=0xffffffff9e655f88  # ORBIS_CUSTOM_667
+ 668  narg=2  flags=0x0000  handler=0xffffffff9e655708  # ORBIS_CUSTOM_668
+ 669  narg=5  flags=0x0000  handler=0xffffffff9e655740  # ORBIS_CUSTOM_669
+ 670  narg=4  flags=0x0000  handler=0xffffffff9e655748  # ORBIS_CUSTOM_670
+ 671  narg=4  flags=0x0000  handler=0xffffffff9e655f90  # ORBIS_CUSTOM_671
+ 672  narg=3  flags=0x0000  handler=0xffffffff9e6555a8  # ORBIS_CUSTOM_672
+ 673  narg=4  flags=0x0000  handler=0xffffffff9e655f98  # ORBIS_CUSTOM_673
+ 674  narg=5  flags=0x0000  handler=0xffffffff9e655fa0  # ORBIS_CUSTOM_674
+ 675  narg=2  flags=0x0000  handler=0xffffffff9e655458  # ORBIS_CUSTOM_675
+ 676  narg=0  flags=0x0000  handler=0xffffffff9e655fa8  # ORBIS_CUSTOM_676
+ 677  narg=2683076184  flags=0xffffffff  handler=0xffffffff9e64dc28  # ORBIS_CUSTOM_677
+ 678  narg=2683076280  flags=0xffffffff  handler=0xffffffff9e64dc40  # ORBIS_CUSTOM_678
+ 679  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_679
+ 680  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_680
+ 681  narg=48  flags=0x0000  handler=0xb  # ORBIS_CUSTOM_681
+ 682  narg=2675353160  flags=0xffffffff  handler=0xd  # ORBIS_CUSTOM_682
+ 683  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_683
+ 684  narg=4  flags=0x0000  handler=0xffffffff9f2666a0  # ORBIS_CUSTOM_684
+ 685  narg=512  flags=0x0000  handler=0x4  # ORBIS_CUSTOM_685
+ 686  narg=2674542298  flags=0xffffffff  handler=0x7  # ORBIS_CUSTOM_686
+ 687  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_687
+ 688  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_688
+ 689  narg=16  flags=0x0000  handler=0x8  # ORBIS_CUSTOM_689
+ 690  narg=2675482181  flags=0xffffffff  handler=0x8  # ORBIS_CUSTOM_690
+ 691  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_691
+ 692  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_692
+ 693  narg=40  flags=0x0000  handler=0x8  # ORBIS_CUSTOM_693
+ 694  narg=2674542321  flags=0xffffffff  handler=0x7  # ORBIS_CUSTOM_694
+ 695  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_695
+ 696  narg=0  flags=0x0000  handler=0x0  # ORBIS_CUSTOM_696
+ 697  narg=2682791952  flags=0xffffffff  handler=0xffffffff9e64dc88  # ORBIS_CUSTOM_697
+ 698  narg=2682792024  flags=0xffffffff  handler=0xffffffff9e64dc98  # ORBIS_CUSTOM_698
+ 699  narg=2683076184  flags=0xffffffff  handler=0xffffffff9e64dcb8  # ORBIS_CUSTOM_699

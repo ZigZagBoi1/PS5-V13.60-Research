@@ -1,0 +1,366 @@
+{
+  "source_sha256": "c3f745e25dc25ee7afef89eb418b295b6334bbefe8aa17e6886483c35d78cddd",
+  "sections": [
+    {
+      "name": "kernel_text",
+      "size": 13369344,
+      "sha256": "20da45a0910c990153fbfb7c94e16356867e0bd84f7c9fbf754a45a5dd129673",
+      "manifest_hash_match": true
+    },
+    {
+      "name": "kernel_data",
+      "size": 90177536,
+      "sha256": "3b3f41fb54d1ab7e4bc3555c3eb176336afc5d42898d7538701f10281aa75e13",
+      "manifest_hash_match": true
+    }
+  ],
+  "carriers": [
+    {
+      "name": "ps5_1360_attack_surface_analysis.exe",
+      "size": 284160,
+      "sha256": "08c090080366fd6877f72b4d0378f084e11a698ddef0819d7c8916aadf9dd67f",
+      "sections": [
+        {
+          "name": ".tramp",
+          "va": "0xffffffff9e655000",
+          "size": 4096,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".common",
+          "va": "0xffffffff9e952000",
+          "size": 32768,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".nosys",
+          "va": "0xffffffff9e79d000",
+          "size": 16384,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".handler",
+          "va": "0xffffffff9ecec000",
+          "size": 32768,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".sysent",
+          "va": "0xffffffff9f25e000",
+          "size": 24576,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".ip6core",
+          "va": "0xffffffff9ecba000",
+          "size": 20480,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".icmp6",
+          "va": "0xffffffff9ec41000",
+          "size": 20480,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".icmpdt",
+          "va": "0xffffffff9fb74000",
+          "size": 16384,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".ip6call",
+          "va": "0xffffffff9e841000",
+          "size": 8192,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".ip6call",
+          "va": "0xffffffff9ef31000",
+          "size": 8192,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".aio",
+          "va": "0xffffffff9ef70000",
+          "size": 65536,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".evf",
+          "va": "0xffffffff9ec1c000",
+          "size": 32768,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".roots",
+          "va": "0xffffffff9e656000",
+          "size": 256,
+          "source_bytes_match": false,
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "name": "ps5_1360_live_memory_analysis.exe",
+      "size": 103547392,
+      "sha256": "53f184967ab9968a02198dae4524fa15ce8edcd0a5b1ddc270871bba33b231cf",
+      "sections": [
+        {
+          "name": ".text",
+          "va": "0xffffffff9e3f0000",
+          "size": 13369344,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".data",
+          "va": "0xffffffff9f0b0000",
+          "size": 90177536,
+          "source_bytes_match": true,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "ps5_1360_prologue_roots_analysis.exe",
+      "size": 103665664,
+      "sha256": "27211115698ed2fa4486d1f12e52220bb091e3fe01cf6354ecdfc7751228fb2d",
+      "sections": [
+        {
+          "name": ".text",
+          "va": "0xffffffff9e3f0000",
+          "size": 13369344,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".data",
+          "va": "0xffffffff9f0b0000",
+          "size": 90177536,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".roots",
+          "va": "0xffffffffa46b0000",
+          "size": 117561,
+          "source_bytes_match": null,
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "name": "ps5_1360_syscall220_analysis.exe",
+      "size": 111616,
+      "sha256": "312f443ccbfe345d70b9ff09fc91d17e24081ab25598e5d4e28247e41221cec2",
+      "sections": [
+        {
+          "name": ".tramp",
+          "va": "0xffffffff9e655000",
+          "size": 4096,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".common",
+          "va": "0xffffffff9e952000",
+          "size": 32768,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".nosys",
+          "va": "0xffffffff9e79d000",
+          "size": 16384,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".handler",
+          "va": "0xffffffff9ecec000",
+          "size": 32768,
+          "source_bytes_match": true,
+          "synthetic": false
+        },
+        {
+          "name": ".sysent",
+          "va": "0xffffffff9f25e000",
+          "size": 24576,
+          "source_bytes_match": true,
+          "synthetic": false
+        }
+      ]
+    }
+  ],
+  "retained_disassembly": [
+    {
+      "file": "rea_sys586_599_full.txt",
+      "sha256": "3a9d865a307e355550e07352a4bf7092af3e602423927a10664ae0c9f93e98f0",
+      "unique_instruction_starts": 2061,
+      "first": "0xffffffff9e73a470",
+      "last": "0xffffffff9eeacbfd"
+    },
+    {
+      "file": "rea_get_obj_member.txt",
+      "sha256": "eb675bfe8505636534a5210b870cc7506e3186afb23e5bc9df806b9405800be2",
+      "unique_instruction_starts": 501,
+      "first": "0xffffffff9e73cfa0",
+      "last": "0xffffffff9e73d787"
+    },
+    {
+      "file": "aio_multi_wait_633.txt",
+      "sha256": "ef14fe7a3c7b87c3b91f670f1139e351f2703aee26526b0bf4d26aec612d2e24",
+      "unique_instruction_starts": 385,
+      "first": "0xffffffff9e829070",
+      "last": "0xffffffff9e82956e"
+    },
+    {
+      "file": "aio_multi_cancel_636.txt",
+      "sha256": "e5390e9427c37efcf16c2e0e936f4200557dc6b387bb3ece3601205214c49dc7",
+      "unique_instruction_starts": 434,
+      "first": "0xffffffff9eaae4d0",
+      "last": "0xffffffff9eaaeac8"
+    },
+    {
+      "file": "aio_multi_delete_632.txt",
+      "sha256": "87b74e7eb5e5a08e43d59e302c9f528750c86115952d553be8bf903ae7486660",
+      "unique_instruction_starts": 356,
+      "first": "0xffffffff9e828e30",
+      "last": "0xffffffff9e82932e"
+    },
+    {
+      "file": "aio_submit_core.txt",
+      "sha256": "fa9d119c45dbe0f20d4eb3df8cc9cf4e2335d58a5c9203f46919c9fdca91cd4b",
+      "unique_instruction_starts": 677,
+      "first": "0xffffffff9ed0c740",
+      "last": "0xffffffff9ed0d03c"
+    },
+    {
+      "file": "dmem_ioctl.txt",
+      "sha256": "7a8b3ca780ce08603e1d367950d6629a9f619eb90c5d73e7490b427548575718",
+      "unique_instruction_starts": 652,
+      "first": "0xffffffff9ead10a0",
+      "last": "0xffffffff9ead1897"
+    },
+    {
+      "file": "gc_ioctl_core.txt",
+      "sha256": "dbd4cfece312517e582fc59f876d9b734d96b24a38b4fdbed97f39c9bc137fd8",
+      "unique_instruction_starts": 1954,
+      "first": "0xffffffff9eb091f0",
+      "last": "0xffffffff9eb0b1e7"
+    },
+    {
+      "file": "icmp6_notify_inline.txt",
+      "sha256": "c7434aa1271c420f2fa5054b21cc30a6ebcb639290ca18199c6b369f6d91e9d9",
+      "unique_instruction_starts": 0,
+      "first": null,
+      "last": null
+    },
+    {
+      "file": "disassembly_targets.txt",
+      "sha256": "ec225b2a453947e89a9d56f25447cb9f0f2106c7b6f20670e828f096835bfc2f",
+      "unique_instruction_starts": 6544,
+      "first": "0xffffffff9e79dcf0",
+      "last": "0xffffffff9f08ac0a"
+    }
+  ],
+  "cfi_helper": {
+    "0xffffffff9e83f8c0": [
+      "0xffffffff9e83f8c0: push rbp",
+      "0xffffffff9e83f8c1: mov rbp, rsp",
+      "0xffffffff9e83f8c4: push r15",
+      "0xffffffff9e83f8c6: push r14",
+      "0xffffffff9e83f8c8: push rbx",
+      "0xffffffff9e83f8c9: push rax",
+      "0xffffffff9e83f8ca: mov rbx, rsi",
+      "0xffffffff9e83f8cd: mov r14, rdi",
+      "0xffffffff9e83f8d0: call 0xffffffff9eef7920",
+      "0xffffffff9e83f8d5: test eax, eax",
+      "0xffffffff9e83f8d7: je 0xffffffff9e83f8e2",
+      "0xffffffff9e83f8d9: cmp byte ptr [rip + 0x160c8af], 0",
+      "0xffffffff9e83f8e0: jne 0xffffffff9e83f8fc",
+      "0xffffffff9e83f8e2: call 0xffffffff9eef7920",
+      "0xffffffff9e83f8e7: test eax, eax",
+      "0xffffffff9e83f8e9: je 0xffffffff9e83f907",
+      "0xffffffff9e83f8eb: mov ecx, 1",
+      "0xffffffff9e83f8f0: xor eax, eax",
+      "0xffffffff9e83f8f2: lock cmpxchg dword ptr [rip + 0x30abaaa], ecx",
+      "0xffffffff9e83f8fa: je 0xffffffff9e83f907",
+      "0xffffffff9e83f8fc: add rsp, 8",
+      "0xffffffff9e83f900: pop rbx",
+      "0xffffffff9e83f901: pop r14",
+      "0xffffffff9e83f903: pop r15",
+      "0xffffffff9e83f905: pop rbp",
+      "0xffffffff9e83f906: ret ",
+      "0xffffffff9e83f907: mov r15, qword ptr [rbp + 8]",
+      "0xffffffff9e83f90b: call 0xffffffff9ebe1950",
+      "0xffffffff9e83f910: lea rdi, [rip - 0x10]",
+      "0xffffffff9e83f917: mov rsi, r14",
+      "0xffffffff9e83f91a: mov rdx, r15",
+      "0xffffffff9e83f91d: mov rcx, rbx",
+      "0xffffffff9e83f920: call 0xffffffff9ebe20c0",
+      "0xffffffff9e83f925: lea rsi, [rip + 0xec22d0]",
+      "0xffffffff9e83f92c: mov edi, 4",
+      "0xffffffff9e83f931: mov rdx, r14",
+      "0xffffffff9e83f934: mov rcx, r15",
+      "0xffffffff9e83f937: mov r8, rbx",
+      "0xffffffff9e83f93a: xor eax, eax",
+      "0xffffffff9e83f93c: call 0xffffffff9f08aa10",
+      "0xffffffff9e83f941: ud2 "
+    ],
+    "0xffffffff9eef7920": [
+      "0xffffffff9eef7920: push rbp",
+      "0xffffffff9eef7921: mov rbp, rsp",
+      "0xffffffff9eef7924: mov ecx, dword ptr [rip + 0xddcb42]",
+      "0xffffffff9eef792a: xor eax, eax",
+      "0xffffffff9eef792c: cmp ecx, 4",
+      "0xffffffff9eef792f: sete al",
+      "0xffffffff9eef7932: pop rbp",
+      "0xffffffff9eef7933: ret "
+    ],
+    "mode": {
+      "va": "0xffffffff9fcd446c",
+      "bytes": "01000000",
+      "value": 1,
+      "capture_only": true
+    },
+    "flag": {
+      "va": "0xffffffff9fe4c18f",
+      "bytes": "00",
+      "value": 0,
+      "capture_only": true
+    },
+    "once": {
+      "va": "0xffffffffa18eb3a4",
+      "bytes": "00000000",
+      "value": 0,
+      "capture_only": true
+    }
+  },
+  "limits": [
+    "Raw disassembly is static; names/types and execution remain unproven.",
+    "Distinct recorded instruction starts are not audited functions or a coverage percentage."
+  ],
+  "prologue_heuristic_candidates": 23512,
+  "missing_data": [
+    {
+      "start_va": "0xffffffffa4400000",
+      "end_va_exclusive": "0xffffffffa46b0000",
+      "bytes": 2818048
+    }
+  ],
+  "unfiltered_prologue_pattern_matches": 25890
+}

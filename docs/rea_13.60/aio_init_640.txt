@@ -1,0 +1,172 @@
+0xffffffff9ee80e10  push     rbp
+0xffffffff9ee80e11  mov      rbp, rsp
+0xffffffff9ee80e14  xor      eax, eax
+0xffffffff9ee80e16  pop      rbp
+0xffffffff9ee80e17  ret      
+0xffffffff9ee80e18  nop      
+0xffffffff9ee80e19  nop      
+0xffffffff9ee80e1a  nop      
+0xffffffff9ee80e1b  nop      
+0xffffffff9ee80e1c  nop      
+0xffffffff9ee80e1d  nop      
+0xffffffff9ee80e1e  nop      
+0xffffffff9ee80e1f  nop      
+0xffffffff9ee80e20  push     rbp
+0xffffffff9ee80e21  mov      rbp, rsp
+0xffffffff9ee80e24  push     rbx
+0xffffffff9ee80e25  push     rax
+0xffffffff9ee80e26  mov      ecx, 1
+0xffffffff9ee80e2b  xor      eax, eax
+0xffffffff9ee80e2d  lock cmpxchg dword ptr [rip + 0x3165aa3], ecx
+0xffffffff9ee80e35  jne      0xffffffff9ee810d5
+0xffffffff9ee80e3b  lea      r11, [rip - 0x81f71a]
+0xffffffff9ee80e42  lea      r10, [rip - 0x81f729]
+0xffffffff9ee80e49  lea      rcx, [rip - 0x825700]
+0xffffffff9ee80e50  lea      r8, [rip - 0x820abf]
+0xffffffff9ee80e57  lea      rax, [rip - 0x82318e]
+0xffffffff9ee80e5e  lea      rdx, [rip - 0x8339ad]
+0xffffffff9ee80e65  lea      rsi, [rip - 0x8213dc]
+0xffffffff9ee80e6c  lea      rdi, [rip - 0x826133]
+0xffffffff9ee80e73  lea      rbx, [rip - 0x823dea]
+0xffffffff9ee80e7a  lea      r9, [rip - 0x827a99]
+0xffffffff9ee80e81  mov      qword ptr [rip + 0x3165aa8], r11
+0xffffffff9ee80e88  lea      r11, [rip - 0x81ef67]
+0xffffffff9ee80e8f  mov      qword ptr [rip + 0x3165a92], r10
+0xffffffff9ee80e96  lea      r10, [rip - 0x826a8d]
+0xffffffff9ee80e9d  mov      qword ptr [rip + 0x3165a44], rcx
+0xffffffff9ee80ea4  lea      rcx, [rip - 0x8339fb]
+0xffffffff9ee80eab  mov      qword ptr [rip + 0x3165a5e], r8
+0xffffffff9ee80eb2  lea      r8, [rip - 0x81f059]
+0xffffffff9ee80eb9  mov      qword ptr [rip + 0x3165a20], rax
+0xffffffff9ee80ec0  mov      qword ptr [rip + 0x3165a31], rdx
+0xffffffff9ee80ec7  mov      qword ptr [rip + 0x3165a32], rsi
+0xffffffff9ee80ece  mov      qword ptr [rip + 0x3165a33], rdi
+0xffffffff9ee80ed5  mov      qword ptr [rip + 0x3165a44], r9
+0xffffffff9ee80edc  mov      qword ptr [rip + 0x3165ab5], rbx
+0xffffffff9ee80ee3  mov      qword ptr [rip + 0x3165b36], rax
+0xffffffff9ee80eea  mov      qword ptr [rip + 0x3165b3f], rdx
+0xffffffff9ee80ef1  mov      qword ptr [rip + 0x3165b40], rsi
+0xffffffff9ee80ef8  mov      qword ptr [rip + 0x3165b41], rdi
+0xffffffff9ee80eff  mov      qword ptr [rip + 0x3165b4a], rbx
+0xffffffff9ee80f06  mov      qword ptr [rip + 0x3165a33], r11
+0xffffffff9ee80f0d  lea      r11, [rip - 0x8215ac]
+0xffffffff9ee80f14  mov      qword ptr [rip + 0x3165a1d], r10
+0xffffffff9ee80f1b  lea      r10, [rip - 0x820e2a]
+0xffffffff9ee80f22  mov      qword ptr [rip + 0x31659c7], rcx
+0xffffffff9ee80f29  mov      qword ptr [rip + 0x31659e8], r8
+0xffffffff9ee80f30  mov      qword ptr [rip + 0x3165af1], rcx
+0xffffffff9ee80f37  mov      qword ptr [rip + 0x3165b0a], r8
+0xffffffff9ee80f3e  mov      qword ptr [rip + 0x3165a0b], r11
+0xffffffff9ee80f45  lea      r11, [rip - 0x824a44]
+0xffffffff9ee80f4c  mov      qword ptr [rip + 0x31659f5], r10
+0xffffffff9ee80f53  lea      r10, [rip - 0x821542]
+0xffffffff9ee80f5a  mov      qword ptr [rip + 0x31659ff], r11
+0xffffffff9ee80f61  lea      r11, [rip - 0x826b50]
+0xffffffff9ee80f68  mov      qword ptr [rip + 0x31659e9], r10
+0xffffffff9ee80f6f  lea      r10, [rip - 0x824a66]
+0xffffffff9ee80f76  mov      qword ptr [rip + 0x3165953], r11
+0xffffffff9ee80f7d  lea      r11, [rip - 0x820f54]
+0xffffffff9ee80f84  mov      qword ptr [rip + 0x31659dd], r10
+0xffffffff9ee80f8b  lea      r10, [rip - 0x833aca]
+0xffffffff9ee80f92  mov      qword ptr [rip + 0x31659df], r11
+0xffffffff9ee80f99  lea      r11, [rip - 0x81f870]
+0xffffffff9ee80fa0  mov      qword ptr [rip + 0x31659c9], r10
+0xffffffff9ee80fa7  lea      r10, [rip - 0x820f76]
+0xffffffff9ee80fae  mov      qword ptr [rip + 0x31659d3], r11
+0xffffffff9ee80fb5  lea      r11, [rip - 0x826024]
+0xffffffff9ee80fbc  mov      qword ptr [rip + 0x31659bd], r10
+0xffffffff9ee80fc3  lea      r10, [rip - 0x81f892]
+0xffffffff9ee80fca  mov      qword ptr [rip + 0x31659d7], r11
+0xffffffff9ee80fd1  lea      r11, [rip - 0x824b30]
+0xffffffff9ee80fd8  mov      qword ptr [rip + 0x31659b1], r10
+0xffffffff9ee80fdf  lea      r10, [rip - 0x823506]
+0xffffffff9ee80fe6  mov      qword ptr [rip + 0x31659c3], r11
+0xffffffff9ee80fed  lea      r11, [rip - 0x826054]
+0xffffffff9ee80ff4  mov      qword ptr [rip + 0x31659a5], r10
+0xffffffff9ee80ffb  mov      qword ptr [rip + 0x3165a56], r10
+0xffffffff9ee81002  mov      qword ptr [rip + 0x31659af], r11
+0xffffffff9ee81009  lea      r11, [rip - 0x823ed8]
+0xffffffff9ee81010  mov      qword ptr [rip + 0x31659a9], r11
+0xffffffff9ee81017  lea      r11, [rip - 0x821a66]
+0xffffffff9ee8101e  mov      qword ptr [rip + 0x31659a3], r11
+0xffffffff9ee81025  lea      r11, [rip - 0x823814]
+0xffffffff9ee8102c  mov      qword ptr [rip + 0x316599d], r11
+0xffffffff9ee81033  lea      r11, [rip - 0x820d3a]
+0xffffffff9ee8103a  mov      qword ptr [rip + 0x3165997], r11
+0xffffffff9ee81041  lea      r11, [rip - 0x820d40]
+0xffffffff9ee81048  mov      qword ptr [rip + 0x3165991], r11
+0xffffffff9ee8104f  lea      r11, [rip - 0x8260ae]
+0xffffffff9ee81056  mov      qword ptr [rip + 0x316598b], r11
+0xffffffff9ee8105d  lea      r11, [rip - 0x824e64]
+0xffffffff9ee81064  mov      qword ptr [rip + 0x3165985], r11
+0xffffffff9ee8106b  lea      r11, [rip - 0x824e6a]
+0xffffffff9ee81072  mov      qword ptr [rip + 0x316597f], r11
+0xffffffff9ee81079  lea      r11, [rip - 0x821770]
+0xffffffff9ee81080  mov      qword ptr [rip + 0x3165979], r11
+0xffffffff9ee81087  lea      r11, [rip - 0x821776]
+0xffffffff9ee8108e  mov      qword ptr [rip + 0x3165973], r11
+0xffffffff9ee81095  lea      r11, [rip - 0x82177c]
+0xffffffff9ee8109c  mov      qword ptr [rip + 0x316596d], r11
+0xffffffff9ee810a3  lea      r11, [rip - 0x821782]
+0xffffffff9ee810aa  mov      qword ptr [rip + 0x3165967], r11
+0xffffffff9ee810b1  call     0xffffffff9eef78d0
+0xffffffff9ee810b6  test     eax, eax
+0xffffffff9ee810b8  je       0xffffffff9ee810d5
+0xffffffff9ee810ba  call     0xffffffff9eebce10
+0xffffffff9ee810bf  mov      ebx, eax
+0xffffffff9ee810c1  call     0xffffffff9eebce50
+0xffffffff9ee810c6  xor      ecx, ecx
+0xffffffff9ee810c8  test     eax, eax
+0xffffffff9ee810ca  sete     cl
+0xffffffff9ee810cd  and      ecx, ebx
+0xffffffff9ee810cf  mov      dword ptr [rip + 0x221ef2b], ecx
+0xffffffff9ee810d5  add      rsp, 8
+0xffffffff9ee810d9  pop      rbx
+0xffffffff9ee810da  pop      rbp
+0xffffffff9ee810db  ret      
+0xffffffff9ee810dc  nop      
+0xffffffff9ee810dd  nop      
+0xffffffff9ee810de  nop      
+0xffffffff9ee810df  nop      
+0xffffffff9ee810e0  push     rbp
+0xffffffff9ee810e1  mov      rbp, rsp
+0xffffffff9ee810e4  pop      rbp
+0xffffffff9ee810e5  ret      
+0xffffffff9ee810e6  nop      
+0xffffffff9ee810e7  nop      
+0xffffffff9ee810e8  nop      
+0xffffffff9ee810e9  nop      
+0xffffffff9ee810ea  nop      
+0xffffffff9ee810eb  nop      
+0xffffffff9ee810ec  nop      
+0xffffffff9ee810ed  nop      
+0xffffffff9ee810ee  nop      
+0xffffffff9ee810ef  nop      
+0xffffffff9ee810f0  push     rbp
+0xffffffff9ee810f1  mov      rbp, rsp
+0xffffffff9ee810f4  pop      rbp
+0xffffffff9ee810f5  ret      
+0xffffffff9ee810f6  nop      
+0xffffffff9ee810f7  nop      
+0xffffffff9ee810f8  nop      
+0xffffffff9ee810f9  nop      
+0xffffffff9ee810fa  nop      
+0xffffffff9ee810fb  nop      
+0xffffffff9ee810fc  nop      
+0xffffffff9ee810fd  nop      
+0xffffffff9ee810fe  nop      
+0xffffffff9ee810ff  nop      
+0xffffffff9ee81100  push     rbp
+0xffffffff9ee81101  mov      rbp, rsp
+0xffffffff9ee81104  pop      rbp
+0xffffffff9ee81105  ret      
+0xffffffff9ee81106  nop      
+0xffffffff9ee81107  nop      
+0xffffffff9ee81108  nop      
+0xffffffff9ee81109  nop      
+0xffffffff9ee8110a  nop      
+0xffffffff9ee8110b  nop      
+0xffffffff9ee8110c  nop      
+0xffffffff9ee8110d  nop      
+0xffffffff9ee8110e  nop      
+0xffffffff9ee8110f  nop      

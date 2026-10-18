@@ -1,0 +1,33 @@
+{
+  "assembled_utc": "2026-10-13T12:30:15.433939+00:00",
+  "firmware": "13.60",
+  "kind": "flat live RAM reconstruction",
+  "kernel_text_base": "0xffffffff9e3f0000",
+  "kernel_data_base": "0xffffffff9f0b0000",
+  "size": 103546880,
+  "sha256": "c3f745e25dc25ee7afef89eb418b295b6334bbefe8aa17e6886483c35d78cddd",
+  "sections": [
+    {
+      "name": "kernel_text",
+      "file_offset": 0,
+      "virtual_address": "0xffffffff9e3f0000",
+      "size": 13369344,
+      "source_sha256": "20da45a0910c990153fbfb7c94e16356867e0bd84f7c9fbf754a45a5dd129673"
+    },
+    {
+      "name": "kernel_data",
+      "file_offset": 13369344,
+      "virtual_address": "0xffffffff9f0b0000",
+      "size": 90177536,
+      "source_sha256": "3b3f41fb54d1ab7e4bc3555c3eb176336afc5d42898d7538701f10281aa75e13"
+    }
+  ],
+  "unmapped_data_ranges": [
+    {
+      "start_page": 21328,
+      "end_page": 22016
+    }
+  ],
+  "unmapped_data_pages": 688,
+  "warning": "unmapped data pages are zero-filled; this is not a decrypted nested PUP kernel.bin or a bootable executable"
+}
